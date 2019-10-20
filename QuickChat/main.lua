@@ -82,8 +82,8 @@ function update_frame_btn()
 	QC.b=Add_Button(L["R"],"/raid  ",W,0,QC.F,{0.5,0.0,0.4,1});W=W+81;
 	QC.b=Add_Button(L["I"],"/i ",W,0,QC.F,{0.9,0.5,0.3,1});W=W+81;
 	QC.b=Add_Button(L["RO"],"/roll",W,0,QC.F,{0.7,0.4,0,1});W=W+81;
-	QC.b=Add_Button(L["RC"],"/readycheck",W,0,QC.F,{0.7,0.4,0,1});W=W+81;
-	QC.b=Add_Button(L["PULL"],"/pull 6",W,0,QC.F,{0.8,0.7,0.9,1});W=W+50;
+	QC.b=Add_Button(L["RC"],"/readycheck",W,0,QC.F,{0.1,0.2,0,1});W=W+81;
+	QC.b=Add_Button(L["PULL"],"/pull 6",W,0,QC.F,{0.7,0.7,0.2,1});W=W+50;
 	
 	QC.F:SetWidth(W);
 	QC.F:Show();
