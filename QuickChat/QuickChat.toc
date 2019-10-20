@@ -1,0 +1,11 @@
+## Interface: 80205
+## Title: |cffd6266cQuickChat|r
+## Version: 1.0
+## Notes: QuickChat
+## Author: BloodDragon2580
+## Notes: Open Chat Faster
+## SavedVariablesPerCharacter: QC_Point, QC_Settings
+
+Locales\locales.xml
+main.lua
+
