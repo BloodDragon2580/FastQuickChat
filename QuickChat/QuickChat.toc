@@ -1,6 +1,6 @@
 ## Interface: 80205
 ## Title: |cffd6266cQuickChat|r
-## Version: 1.1
+## Version: 1.4
 ## Notes: QuickChat
 ## Author: BloodDragon2580
 ## Notes: Open Chat Faster

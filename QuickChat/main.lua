@@ -39,10 +39,10 @@ function Add_Frame(w,h)
 end
 function Add_Button(text,command,x,y,parent,color) 
 	local Button = CreateFrame("Button", nil, parent) 
-	Button:SetWidth(80)
+	Button:SetWidth(65)
 	Button:SetHeight(20)
 	Button:SetPoint("CENTER",parent, "LEFT", x, y);
-	Button:SetNormalFontObject("GameFontHighlight");
+	Button:SetNormalFontObject("GameFontHighlightSmall");
 	Button:SetText(text)
 	Button:RegisterForClicks("AnyUp") 
 	local textureFrame4 = Button:CreateTexture("ARTWORK")
@@ -55,10 +55,10 @@ function Add_Button(text,command,x,y,parent,color)
 end
 function Add_Button_NOc(text,x,y,parent,color) 
 	local Button = CreateFrame("Button", nil, parent)
-	Button:SetWidth(80)
+	Button:SetWidth(65)
 	Button:SetHeight(20)
 	Button:SetPoint("CENTER",parent, "LEFT", x, y);
-	Button:SetNormalFontObject("GameFontHighlight");
+	Button:SetNormalFontObject("GameFontHighlightSmall");
 	Button:SetText(text)
 	Button:RegisterForClicks("AnyUp") 
 	local textureFrame4 = Button:CreateTexture("ARTWORK")
@@ -71,19 +71,19 @@ end
 function update_frame_btn()
 	if type(QC)=="table" and QC.F~=nil then QC.F:Hide(); QC={}; end
 	inInstance, instanceType = IsInInstance();
-	QC.F = Add_Frame(10,30); local W=50;
+	QC.F = Add_Frame(10,30); local W=45;
 	if type(QC_Settings)=="table" then
 		if QC_Settings.bt~=1 then for key, val in pairs(L) do L[key]=""; end end
 	end
 --background
-	QC.b=Add_Button(L["S"],"/s ",W,0,QC.F,{0.5,0.5,0.5,1});W=W+81;
-	if IsInGuild() then QC.b7=Add_Button(L["G"],"/g ",W,0,QC.F,{0.3,0.6,0.4,1});W=W+81; end
-	QC.b=Add_Button(L["P"],"/p ",W,0,QC.F,{0.2,0.3,0.4,1});W=W+81;
-	QC.b=Add_Button(L["R"],"/raid  ",W,0,QC.F,{0.5,0.0,0.4,1});W=W+81;
-	QC.b=Add_Button(L["I"],"/i ",W,0,QC.F,{0.9,0.5,0.3,1});W=W+81;
-	QC.b=Add_Button(L["RO"],"/roll",W,0,QC.F,{0.7,0.4,0,1});W=W+81;
-	QC.b=Add_Button(L["RC"],"/readycheck",W,0,QC.F,{0.1,0.2,0,1});W=W+81;
-	QC.b=Add_Button(L["PULL"],"/pull 6",W,0,QC.F,{0.7,0.7,0.2,1});W=W+50;
+	QC.b=Add_Button(L["S"],"/s ",W,0,QC.F,{0.5,0.5,0.5,1});W=W+66;
+	if IsInGuild() then QC.b7=Add_Button(L["G"],"/g ",W,0,QC.F,{0.3,0.6,0.4,1});W=W+66; end
+	QC.b=Add_Button(L["P"],"/p ",W,0,QC.F,{0.2,0.3,0.4,1});W=W+66;
+	QC.b=Add_Button(L["R"],"/raid ",W,0,QC.F,{0.5,0.0,0.4,1});W=W+66;
+	QC.b=Add_Button(L["I"],"/i ",W,0,QC.F,{0.9,0.5,0.3,1});W=W+66;
+	QC.b=Add_Button(L["RO"],"/roll",W,0,QC.F,{0.7,0.4,0,1});W=W+66;
+	QC.b=Add_Button(L["RC"],"/readycheck",W,0,QC.F,{0.1,0.2,0,1});W=W+66;
+	QC.b=Add_Button(L["PULL"],"/pull 6",W,0,QC.F,{0.7,0.7,0.2,1});W=W+45;
 	
 	QC.F:SetWidth(W);
 	QC.F:Show();
