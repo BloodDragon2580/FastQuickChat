@@ -49,8 +49,18 @@ function Add_Button(text,command,x,y,parent,color)
 	textureFrame4:SetColorTexture(color[1],color[2],color[3],color[4])
 	textureFrame4:SetAllPoints(Button)
 	Button:SetScript("OnClick", function() 
-		Open_chat(command);
-	end )
+        if command=="/pull 6" then
+            SlashCmdList.DEADLYBOSSMODSPULL(6)
+    elseif command=="/roll" then
+        RandomRoll("1","100")
+    elseif command=="/readycheck" then
+        DoReadyCheck()
+    elseif command=="/reload" then
+        ReloadUI()
+    else
+            Open_chat(command)
+        end
+    end)
 	return Button;
 end
 function Add_Button_NOc(text,x,y,parent,color) 
@@ -77,13 +87,13 @@ function update_frame_btn()
 	end
 --background
 	QC.b=Add_Button(L["S"],"/s ",W,0,QC.F,{0.5,0.5,0.5,1});W=W+66;
-	if IsInGuild() then QC.b7=Add_Button(L["G"],"/g ",W,0,QC.F,{0.3,0.6,0.4,1});W=W+66; end
-	QC.b=Add_Button(L["P"],"/p ",W,0,QC.F,{0.2,0.3,0.4,1});W=W+66;
-	QC.b=Add_Button(L["R"],"/raid ",W,0,QC.F,{0.5,0.0,0.4,1});W=W+66;
-	QC.b=Add_Button(L["I"],"/i ",W,0,QC.F,{0.9,0.5,0.3,1});W=W+66;
-	QC.b=Add_Button(L["RO"],"/roll",W,0,QC.F,{0.7,0.4,0,1});W=W+66;
-	QC.b=Add_Button(L["RC"],"/readycheck",W,0,QC.F,{0.1,0.2,0,1});W=W+66;
-	QC.b=Add_Button(L["PULL"],"/pull 6",W,0,QC.F,{0.7,0.7,0.2,1});W=W+45;
+	if IsInGuild() then QC.b1=Add_Button(L["G"],"/g ",W,0,QC.F,{0.3,0.6,0.4,1});W=W+66; end
+	if IsInGroup() then QC.b2=Add_Button(L["P"],"/p ",W,0,QC.F,{0.2,0.3,0.4,1});W=W+66; end
+	if IsInRaid() then QC.b3=Add_Button(L["R"],"/raid ",W,0,QC.F,{0.5,0.0,0.4,1});W=W+66; end
+	QC.b4=Add_Button(L["RO"],"/roll",W,0,QC.F,{0.7,0.4,0,1});W=W+66;
+	if IsInGroup() or (inInstance ~= nil and instanceType == "party") or (inInstance ~= nil and instanceType == "raid") then QC.b5=Add_Button(L["RC"],"/readycheck",W,0,QC.F,{0.1,0.2,0,1});W=W+66; end
+	if IsInGroup() or (inInstance ~= nil and instanceType == "party") or (inInstance ~= nil and instanceType == "raid") then QC.b6=Add_Button(L["PULL"],"/pull 6",W,0,QC.F,{0.7,0.7,0.2,1});W=W+66; end
+	QC.b7=Add_Button(L["RELOAD"],"/reload",W,0,QC.F,{0.8,0.0,0.0,1});W=W+45;
 	
 	QC.F:SetWidth(W);
 	QC.F:Show();

@@ -9,5 +9,6 @@ tL["I"] = "Instanz"
 tL["RO"] = "Roll"
 tL["RC"] = "ReadyCheck"
 tL["PULL"] = "PullTimer"
+tL["RELOAD"] = "Reload UI"
 
 QCL.enUS=tL;
