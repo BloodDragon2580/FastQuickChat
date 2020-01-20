@@ -57,6 +57,10 @@ function Add_Button(text,command,x,y,parent,color)
         DoReadyCheck()
     elseif command=="/reload" then
         ReloadUI()
+    elseif command=="/script LeaveParty()" then
+        LeaveParty()
+    elseif command=="/break 10" then
+            SlashCmdList.DEADLYBOSSMODSBREAK(10)
     else
             Open_chat(command)
         end
@@ -93,7 +97,9 @@ function update_frame_btn()
 	QC.b4=Add_Button(L["RO"],"/roll",W,0,QC.F,{0.7,0.4,0,1});W=W+66;
 	if IsInGroup() or (inInstance ~= nil and instanceType == "party") or (inInstance ~= nil and instanceType == "raid") then QC.b5=Add_Button(L["RC"],"/readycheck",W,0,QC.F,{0.1,0.2,0,1});W=W+66; end
 	if IsInGroup() or (inInstance ~= nil and instanceType == "party") or (inInstance ~= nil and instanceType == "raid") then QC.b6=Add_Button(L["PULL"],"/pull 6",W,0,QC.F,{0.7,0.7,0.2,1});W=W+66; end
-	QC.b7=Add_Button(L["RELOAD"],"/reload",W,0,QC.F,{0.8,0.0,0.0,1});W=W+45;
+	if IsInGroup() or (inInstance ~= nil and instanceType == "party") or (inInstance ~= nil and instanceType == "raid") then QC.b7=Add_Button(L["BREAK"],"/break 10",W,0,QC.F,{0.1,0.1,0.5,1});W=W+66; end
+	if IsInGroup() or (inInstance ~= nil and instanceType == "party") or (inInstance ~= nil and instanceType == "raid") then QC.b8=Add_Button(L["PARTY"],"/script LeaveParty()",W,0,QC.F,{0.4,0,0.6,1});W=W+66; end
+	QC.b9=Add_Button(L["RELOAD"],"/reload",W,0,QC.F,{0.8,0.0,0.0,1});W=W+45;
 	
 	QC.F:SetWidth(W);
 	QC.F:Show();

@@ -9,6 +9,8 @@ tL["I"] = "Подземелье"
 tL["RO"] = "Ролл"
 tL["RC"] = "Проверка Готовности"
 tL["PULL"] = "Таймер Атаки"
+tL["BREAK"] = "Pause 10min"
 tL["RELOAD"] = "Reload UI"
+tL["PARTY"] = "Leave Party"
 
 QCL.ruRU=tL;
