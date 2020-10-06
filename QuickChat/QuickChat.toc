@@ -1,6 +1,6 @@
 ## Interface: 90001
 ## Title: |cffd6266cQuickChat|r
-## Version: 4.0
+## Version: 5.0
 ## Notes: QuickChat
 ## Author: BloodDragon2580
 ## Notes: Open Chat Faster

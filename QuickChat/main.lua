@@ -1,4 +1,4 @@
-local frame = CreateFrame("Frame",nil,UIParent)
+local frame = CreateFrame("Frame", nil, UIParent, BackdropTemplateMixin and "BackdropTemplate")
 local L=QCL[GetLocale()];
 if type(L)~="table" then L=QCL["enUS"]; end
 local QC={};
@@ -17,7 +17,7 @@ function Open_chat(channel)
 	ChatEdit_UpdateHeader(editBox);
 end
 function Add_Frame(w,h)
-	local CF = CreateFrame("FRAME","addcomentframe_frame",UIParent);
+	local CF = CreateFrame("FRAME","addcomentframe_frame",UIParent, BackdropTemplateMixin and "BackdropTemplate");
 	CF:SetMovable(true)
 	CF:EnableMouse(true)
 	CF:SetClampedToScreen(true)
