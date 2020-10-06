@@ -7,5 +7,7 @@
 ## SavedVariablesPerCharacter: QC_Point, QC_Settings
 
 Locales\locales.xml
-main.lua
+Fix\lib.xml
 
+main.lua
+Fix.lua
