@@ -1,6 +1,8 @@
+-- The global table used by other files of the addon
+QuickChat = {}
+
 local frame = CreateFrame("Frame", nil, UIParent, BackdropTemplateMixin and "BackdropTemplate")
-local L=QCL[GetLocale()];
-if type(L)~="table" then L=QCL["enUS"]; end
+local L = QuickChat_GetLocalization()
 local QC={};
 local backdrop = {
     bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background",
@@ -94,23 +96,62 @@ function update_frame_btn()
 	if IsInGuild() then QC.b1=Add_Button(L["G"],"/g ",W,0,QC.F,{0.3,0.6,0.4,1});W=W+66; end
 	if IsInGroup() then QC.b2=Add_Button(L["P"],"/p ",W,0,QC.F,{0.2,0.3,0.4,1});W=W+66; end
 	if IsInRaid() then QC.b3=Add_Button(L["R"],"/raid ",W,0,QC.F,{0.5,0.0,0.4,1});W=W+66; end
-	QC.b4=Add_Button(L["RO"],"/roll",W,0,QC.F,{0.7,0.4,0,1});W=W+66;
-	if IsInGroup() or (inInstance ~= nil and instanceType == "party") or (inInstance ~= nil and instanceType == "raid") then QC.b5=Add_Button(L["RC"],"/readycheck",W,0,QC.F,{0.1,0.2,0,1});W=W+66; end
-	if IsInGroup() or (inInstance ~= nil and instanceType == "party") or (inInstance ~= nil and instanceType == "raid") then QC.b6=Add_Button(L["PULL"],"/pull 10",W,0,QC.F,{0.7,0.7,0.2,1});W=W+66; end
-	if IsInGroup() or (inInstance ~= nil and instanceType == "party") or (inInstance ~= nil and instanceType == "raid") then QC.b7=Add_Button(L["BREAK"],"/break 10",W,0,QC.F,{0.1,0.1,0.5,1});W=W+66; end
-	if IsInGroup() or (inInstance ~= nil and instanceType == "party") or (inInstance ~= nil and instanceType == "raid") then QC.b8=Add_Button(L["PARTY"],"/script C_PartyInfo.LeaveParty()",W,0,QC.F,{0.4,0,0.6,1});W=W+66; end
-	QC.b9=Add_Button(L["RELOAD"],"/reload",W,0,QC.F,{0.8,0.0,0.0,1});W=W+45;
+
+	if QC_Settings.enableRoll then
+		QC.b4 = Add_Button(L["RO"], "/roll", W, 0, QC.F, {0.7, 0.4, 0,1})
+		W = W + 66
+	end
+
+	if QC_Settings.enableReadyCheck then
+		if IsInGroup() or (inInstance ~= nil and instanceType == "party") or (inInstance ~= nil and instanceType == "raid") then
+			QC.b5 = Add_Button(L["RC"], "/readycheck", W, 0, QC.F, {0.1, 0.2, 0, 1})
+			W = W + 66
+		end
+	end
+
+	if QC_Settings.enablePull then
+		if IsInGroup() or (inInstance ~= nil and instanceType == "party") or (inInstance ~= nil and instanceType == "raid") then
+			QC.b6 = Add_Button(L["PULL"], "/pull 10", W, 0, QC.F, {0.7, 0.7, 0.2, 1})
+			W = W + 66
+		end
+	end
+
+	if QC_Settings.enableBreak then
+		if IsInGroup() or (inInstance ~= nil and instanceType == "party") or (inInstance ~= nil and instanceType == "raid") then
+			QC.b7 = Add_Button(L["BREAK"], "/break 10", W, 0, QC.F, {0.1, 0.1, 0.5, 1})
+			W = W + 66
+		end
+	end
+
+	if QC_Settings.enableReload then
+		QC.b9 = Add_Button(L["RELOAD"], "/reload", W, 0, QC.F, {0.8, 0.0, 0.0, 1})
+		W = W + 45
+	end
 	
 	QC.F:SetWidth(W);
-	QC.F:Show();
-	 
+	QC.F:Show(); 
 end
 
-function frame:ADDON_LOADED(arg1)  
-	if (arg1 == "QC_Settings" and type(QC_Settings)~="table") or not QC_Settings then QC_Settings={bt=1}; end
+function frame:ADDON_LOADED(arg1)
+	if arg1 == "QuickChat" then
+		if QC_Settings == nil then
+			QC_Settings = {}
+		end
+
+		if QC_Settings.bt == nil then
+			QC_Settings.bt = 1
+		end
+		-- ~= false means true if nil
+		QC_Settings.enableRoll = QC_Settings.enableRoll ~= false
+		QC_Settings.enableReadyCheck = QC_Settings.enableReadyCheck ~= false
+		QC_Settings.enablePull = QC_Settings.enablePull ~= false
+		QC_Settings.enableBreak = QC_Settings.enableBreak ~= false
+		QC_Settings.enableReload = QC_Settings.enableReload ~= false
+		QuickChat.cfgFrame:onAddonLoaded()
+	end
 
 	if (arg1 == "QC_Point" and type(QC_Point)~="table") or not QC_Point then QC_Point={x=(GetScreenWidth()*0.5),y=(GetScreenHeight()*0.5)}; end
-	if type(QC_Point)=="table" and QC.F==nil then update_frame_btn(); end 
+	if type(QC_Point)=="table" and QC.F==nil then update_frame_btn(); end
 end
 
 function frame:GROUP_ROSTER_UPDATE(arg1)	
