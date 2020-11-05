@@ -1,1 +1,7 @@
-<Ui xmlns="http://www.blizzard.com/wow/ui/">	<Script file="enUS.lua"/>	<Script file="deDE.lua"/>	<Script file="ruRU.lua"/>	<Script file="frFR.lua"/></Ui>
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+	<Script file="enUS.lua"/>
+	<Script file="deDE.lua"/>
+	<Script file="ruRU.lua"/>
+	<Script file="frFR.lua"/>
+	<Script file="core.lua"/>
+</Ui>
