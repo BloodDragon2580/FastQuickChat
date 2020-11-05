@@ -133,10 +133,11 @@ function update_frame_btn()
 end
 
 function frame:ADDON_LOADED(arg1)
-
-	if (arg1 == "QC_Point" and type(QC_Point)~="table") or not QC_Point then QC_Point={x=(GetScreenWidth()*0.5),y=(GetScreenHeight()*0.5)}; end
-	if type(QC_Point)=="table" and QC.F==nil then update_frame_btn(); end
 	if arg1 == "QuickChat" then
+		if QC_Settings == nil then
+			QC_Settings = {}
+		end
+
 		if QC_Settings.bt == nil then
 			QC_Settings.bt = 1
 		end
@@ -148,6 +149,9 @@ function frame:ADDON_LOADED(arg1)
 		QC_Settings.enableReload = QC_Settings.enableReload ~= false
 		QuickChat.cfgFrame:onAddonLoaded()
 	end
+
+	if (arg1 == "QC_Point" and type(QC_Point)~="table") or not QC_Point then QC_Point={x=(GetScreenWidth()*0.5),y=(GetScreenHeight()*0.5)}; end
+	if type(QC_Point)=="table" and QC.F==nil then update_frame_btn(); end
 end
 
 function frame:GROUP_ROSTER_UPDATE(arg1)	
