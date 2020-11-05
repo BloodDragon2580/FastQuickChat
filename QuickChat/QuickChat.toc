@@ -1,9 +1,9 @@
 ## Interface: 90001
 ## Title: |cffd6266cQuickChat|r
-## Version: 5.2
+## Version: 5.3
 ## Notes: QuickChat
 ## Author: BloodDragon2580
-## Notes: Open Chat Faster
+## Notes: Open Chat Faster (A big Thx at KalitaAlexey for the settings Page.)
 ## SavedVariablesPerCharacter: QC_Point, QC_Settings
 
 Locales\locales.xml
