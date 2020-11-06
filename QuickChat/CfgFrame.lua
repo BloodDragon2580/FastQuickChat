@@ -46,3 +46,15 @@ function createCheckButton(name, text, checked, onCheckedChanged)
     -- Remember the created button to position next buttons after it
     previousButton = b
 end
+
+local QuickChatTitle = QuickChat_CfgFrame:CreateFontString("QuickChatTitle", "OVERLAY", "ChatFontNormal")
+QuickChatTitle:SetPoint("TOP", QuickChat_CfgFrame, "TOP",0,-10) 
+QuickChatTitle:SetText("|cffe1a500 QuickChat Settings")
+
+local QuickChatVertText = QuickChat_CfgFrame:CreateFontString("vertText", "OVERLAY", "ChatFontNormal")
+QuickChatVertText:SetPoint("TOP", QuickChat_CfgFrame , "TOP",0,-40)
+QuickChatVertText:SetText("|cffffffff Here you can check or uncheck the buttons,\ndepending on which buttons you want to use.")
+
+local QuickChatVertText = QuickChat_CfgFrame:CreateFontString("vertText", "OVERLAY", "ChatFontNormal")
+QuickChatVertText:SetPoint("BOTTOM", QuickChat_CfgFrame , "BOTTOM",0,10)
+QuickChatVertText:SetText("|cffff6060 A big Thx at KalitaAlexey for the settings Page.")
