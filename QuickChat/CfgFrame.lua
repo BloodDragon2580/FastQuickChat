@@ -1,4 +1,5 @@
 local cfgFrame = CreateFrame("Frame", "QuickChat_CfgFrame", UIParent)
+local L = QuickChat_GetLocalization()
 cfgFrame.name = "QuickChat"
 InterfaceOptions_AddCategory(cfgFrame)
 QuickChat.cfgFrame = cfgFrame
@@ -33,9 +34,9 @@ function createCheckButton(name, text, checked, onCheckedChanged)
     -- The first button is positioned at the top of its parent.
     -- Other buttons are positioned at the bottom of the previous button
     if previousButton then
-        b:SetPoint("TOPLEFT", previousButton, "BOTTOMLEFT")
+        b:SetPoint("TOP", previousButton, "BOTTOM")
     else
-        b:SetPoint("TOPLEFT")
+        b:SetPoint("TOP",-120,-100)
     end
     b:SetChecked(checked)
     b:SetScript("OnClick", function()
@@ -47,14 +48,14 @@ function createCheckButton(name, text, checked, onCheckedChanged)
     previousButton = b
 end
 
-local QuickChatTitle = QuickChat_CfgFrame:CreateFontString("QuickChatTitle", "OVERLAY", "ChatFontNormal")
+local QuickChatTitle = QuickChat_CfgFrame:CreateFontString("QuickChatTitle", "OVERLAY", "GameFontHighlightLarge")
 QuickChatTitle:SetPoint("TOP", QuickChat_CfgFrame, "TOP",0,-10) 
-QuickChatTitle:SetText("|cffe1a500 QuickChat Settings")
+QuickChatTitle:SetText(L["TITLE"])
 
-local QuickChatVertText = QuickChat_CfgFrame:CreateFontString("vertText", "OVERLAY", "ChatFontNormal")
+local QuickChatVertText = QuickChat_CfgFrame:CreateFontString("vertText", "OVERLAY", "GameFontHighlight")
 QuickChatVertText:SetPoint("TOP", QuickChat_CfgFrame , "TOP",0,-40)
-QuickChatVertText:SetText("|cffffffff Here you can check or uncheck the buttons,\ndepending on which buttons you want to use.")
+QuickChatVertText:SetText(L["INFO"])
 
-local QuickChatVertText = QuickChat_CfgFrame:CreateFontString("vertText", "OVERLAY", "ChatFontNormal")
+local QuickChatVertText = QuickChat_CfgFrame:CreateFontString("vertText", "OVERLAY", "GameFontHighlight")
 QuickChatVertText:SetPoint("BOTTOM", QuickChat_CfgFrame , "BOTTOM",0,10)
-QuickChatVertText:SetText("|cffff6060 A big Thx at KalitaAlexey for the settings Page.")
+QuickChatVertText:SetText(L["THX"])
