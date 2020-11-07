@@ -3,5 +3,6 @@
 	<Script file="deDE.lua"/>
 	<Script file="ruRU.lua"/>
 	<Script file="frFR.lua"/>
+	<Script file="zhTW.lua"/>
 	<Script file="core.lua"/>
 </Ui>
