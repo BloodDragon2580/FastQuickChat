@@ -160,12 +160,6 @@ end
 function frame:CONSOLE_MESSAGE(arg1)
 	if type(QC_Point)=="table" and QC.F~=nil then update_frame_btn(); end 
 end
-function frame:PLAYER_STOPPED_MOVING(arg1)
-	if type(QC_Point)=="table" and QC.F~=nil then update_frame_btn(); end
-end
-function frame:PLAYER_STARTED_MOVING(arg1)
-	if type(QC_Point)=="table" and QC.F~=nil then update_frame_btn(); end
-end
 function frame:CRITERIA_UPDATE(arg1)
 	if type(QC_Point)=="table" and QC.F~=nil then update_frame_btn(); end
 end
@@ -173,7 +167,5 @@ end
 frame:RegisterEvent("CONSOLE_MESSAGE");
 frame:RegisterEvent("ADDON_LOADED");
 frame:RegisterEvent("GROUP_ROSTER_UPDATE");
-frame:RegisterEvent("PLAYER_STOPPED_MOVING");
-frame:RegisterEvent("PLAYER_STARTED_MOVING");
 frame:RegisterEvent("CRITERIA_UPDATE");
 frame:SetScript("OnEvent",function(self, event, ...) self[event](self, ...) end)
