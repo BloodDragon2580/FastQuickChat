@@ -1,6 +1,10 @@
 -- The global table used by other files of the addon
 QuickChat = {}
 
+local BUTTON_PADDING = 4
+local BUTTON_MARGIN = 0
+local BUTTON_MINIMUM_WIDTH = 40
+local FRAME_PADDING = 8
 local frame = CreateFrame("Frame", nil, UIParent, BackdropTemplateMixin and "BackdropTemplate")
 local L = QuickChat_GetLocalization()
 local QC={};
@@ -39,16 +43,39 @@ function Add_Frame(w,h)
 	CF:Hide()
 	return CF;
 end
-function Add_Button(text,command,x,y,parent,color) 
-	local Button = CreateFrame("Button", nil, parent) 
-	Button:SetWidth(65)
-	Button:SetHeight(20)
-	Button:SetPoint("CENTER",parent, "LEFT", x, y);
+
+-- The function must be called after the button has font and text set, otherwise Button's GetTextWidth won't work
+function QuickChat_SetButtonWidth(button)
+	local w = button:GetTextWidth() + BUTTON_PADDING
+	if w < BUTTON_MINIMUM_WIDTH then
+		w = BUTTON_MINIMUM_WIDTH
+	end
+	button:SetWidth(w)
+end
+
+-- Contains accumulation of the frame's width. Add_Button increases it
+local frameWidth = 0
+-- Contains the previously created button. Add_Button uses it to place a new button by the previous button
+local relativeButton = nil
+
+function Add_Button(text, command, parentFrame, color)
+	local Button = CreateFrame("Button", nil, parentFrame)
+	-- The first button is placed related to the frame. Next buttons are placed after the previous
+	if relativeButton ~= nil then
+		Button:SetPoint("LEFT", relativeButton, "RIGHT", BUTTON_MARGIN, 0);
+		frameWidth = frameWidth + BUTTON_MARGIN
+	else
+		Button:SetPoint("LEFT", parentFrame, "LEFT", FRAME_PADDING, 0)
+		frameWidth = frameWidth + FRAME_PADDING
+	end
 	Button:SetNormalFontObject("GameFontHighlightSmall");
 	Button:SetText(text)
+	QuickChat_SetButtonWidth(Button)
+	frameWidth = frameWidth + Button:GetWidth()
+	Button:SetHeight(Button:GetTextHeight() + BUTTON_PADDING)
 	Button:RegisterForClicks("AnyUp") 
 	local textureFrame4 = Button:CreateTexture("ARTWORK")
-	textureFrame4:SetColorTexture(color[1],color[2],color[3],color[4])
+	textureFrame4:SetColorTexture(color[1], color[2], color[3], color[4])
 	textureFrame4:SetAllPoints(Button)
 	Button:SetScript("OnClick", function() 
         if command=="/pull 10" then
@@ -66,13 +93,14 @@ function Add_Button(text,command,x,y,parent,color)
     else
             Open_chat(command)
         end
-    end)
+	end)
+	relativeButton = Button
 	return Button;
 end
 function Add_Button_NOc(text,x,y,parent,color) 
 	local Button = CreateFrame("Button", nil, parent)
-	Button:SetWidth(65)
-	Button:SetHeight(20)
+	-- Button:SetWidth(65)
+	-- Button:SetHeight(20)
 	Button:SetPoint("CENTER",parent, "LEFT", x, y);
 	Button:SetNormalFontObject("GameFontHighlightSmall");
 	Button:SetText(text)
@@ -85,50 +113,62 @@ end
 
 --background
 function update_frame_btn()
-	if type(QC)=="table" and QC.F~=nil then QC.F:Hide(); QC={}; end
-	inInstance, instanceType = IsInInstance();
-	QC.F = Add_Frame(10,30); local W=45;
-	if type(QC_Settings)=="table" then
-		if QC_Settings.bt~=1 then for key, val in pairs(L) do L[key]=""; end end
+	if type(QC) == "table" and QC.F ~= nil then
+		QC.F:Hide()
+		QC = {}
 	end
---background
-	QC.b=Add_Button(L["S"],"/s ",W,0,QC.F,{0.5,0.5,0.5,1});W=W+66;
-	if IsInGuild() then QC.b1=Add_Button(L["G"],"/g ",W,0,QC.F,{0.3,0.6,0.4,1});W=W+66; end
-	if IsInGroup() then QC.b2=Add_Button(L["P"],"/p ",W,0,QC.F,{0.2,0.3,0.4,1});W=W+66; end
-	if IsInRaid() then QC.b3=Add_Button(L["R"],"/raid ",W,0,QC.F,{0.5,0.0,0.4,1});W=W+66; end
+	inInstance, instanceType = IsInInstance()
+	QC.F = Add_Frame(10, 30)
+	local W=45
+	if type(QC_Settings) == "table" then
+		if QC_Settings.bt ~= 1 then
+			for key, val in pairs(L) do
+				L[key] = ""
+			end
+		end
+	end
+	frameWidth = 0
+	relativeButton = nil
+	QC.b = Add_Button(L["S"], "/s ", QC.F, {0.5, 0.5, 0.5, 1})
+	if IsInGuild() then
+		QC.b1 = Add_Button(L["G"], "/g ", QC.F, {0.3, 0.6, 0.4, 1})
+	end
+	if IsInGroup() then
+		QC.b2 = Add_Button(L["P"], "/p ", QC.F, {0.2, 0.3, 0.4, 1})
+	end
+	if IsInRaid() then
+		QC.b3 = Add_Button(L["R"], "/raid ", QC.F, {0.5, 0.0, 0.4, 1})
+	end
 
 	if QC_Settings.enableRoll then
-		QC.b4 = Add_Button(L["RO"], "/roll", W, 0, QC.F, {0.7, 0.4, 0,1})
-		W = W + 66
+		QC.b4 = Add_Button(L["RO"], "/roll", QC.F, {0.7, 0.4, 0,1})
 	end
 
 	if QC_Settings.enableReadyCheck then
 		if IsInGroup() or (inInstance ~= nil and instanceType == "party") or (inInstance ~= nil and instanceType == "raid") then
-			QC.b5 = Add_Button(L["RC"], "/readycheck", W, 0, QC.F, {0.1, 0.2, 0, 1})
-			W = W + 66
+			QC.b5 = Add_Button(L["RC"], "/readycheck", QC.F, {0.1, 0.2, 0, 1})
 		end
 	end
 
 	if QC_Settings.enablePull then
 		if IsInGroup() or (inInstance ~= nil and instanceType == "party") or (inInstance ~= nil and instanceType == "raid") then
-			QC.b6 = Add_Button(L["PULL"], "/pull 10", W, 0, QC.F, {0.7, 0.7, 0.2, 1})
-			W = W + 66
+			QC.b6 = Add_Button(L["PULL"], "/pull 10", QC.F, {0.7, 0.7, 0.2, 1})
 		end
 	end
 
 	if QC_Settings.enableBreak then
 		if IsInGroup() or (inInstance ~= nil and instanceType == "party") or (inInstance ~= nil and instanceType == "raid") then
-			QC.b7 = Add_Button(L["BREAK"], "/break 10", W, 0, QC.F, {0.1, 0.1, 0.5, 1})
-			W = W + 66
+			QC.b7 = Add_Button(L["BREAK"], "/break 10", QC.F, {0.1, 0.1, 0.5, 1})
 		end
 	end
 
 	if QC_Settings.enableReload then
-		QC.b9 = Add_Button(L["RELOAD"], "/reload", W, 0, QC.F, {0.8, 0.0, 0.0, 1})
-		W = W + 45
+		QC.b9 = Add_Button(L["RELOAD"], "/reload", QC.F, {0.8, 0.0, 0.0, 1})
 	end
 	
-	QC.F:SetWidth(W);
+	frameWidth = frameWidth + FRAME_PADDING
+
+	QC.F:SetWidth(frameWidth);
 	QC.F:Show(); 
 end
 
