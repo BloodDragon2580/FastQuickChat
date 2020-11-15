@@ -195,7 +195,6 @@ function frame:ADDON_LOADED(arg1)
 		QC_Settings.enableBreak = QC_Settings.enableBreak ~= false
 		QC_Settings.enableReload = QC_Settings.enableReload ~= false
 		QuickChat.cfgFrame:onAddonLoaded()
-
 		if QC.F == nil then
 			update_frame_btn()
 		end
