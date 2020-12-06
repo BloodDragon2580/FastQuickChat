@@ -136,6 +136,11 @@ function update_frame_btn()
 	if IsInGroup() then
 		QC.b2 = Add_Button(L["P"], "/p ", QC.F, {0.2, 0.3, 0.4, 1})
 	end
+
+	if HasLFGRestrictions() then
+		QC.dungeonButton = Add_Button(L["I"], "/i ", QC.F, {1, 0.5, 0, 1})
+	end
+
 	if IsInRaid() then
 		QC.b3 = Add_Button(L["R"], "/raid ", QC.F, {0.5, 0.0, 0.4, 1})
 	end
