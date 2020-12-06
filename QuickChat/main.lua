@@ -23,23 +23,25 @@ function Open_chat(channel)
 	ChatEdit_UpdateHeader(editBox);
 end
 function Add_Frame(w,h)
-	local CF = CreateFrame("FRAME","addcomentframe_frame",UIParent, BackdropTemplateMixin and "BackdropTemplate");
-	CF:SetMovable(true)
+	local CF = CreateFrame("FRAME", "addcomentframe_frame", UIParent, BackdropTemplateMixin and "BackdropTemplate")
 	CF:EnableMouse(true)
-	CF:SetClampedToScreen(true)
-	CF:SetScript("OnMouseDown", CF.StartMoving) 
-	CF:SetScript("OnMouseUp",function(self, event, ...)
-			self:StopMovingOrSizing();
-			local point, relativeTo, relativePoint, xOfs, yOfs = self:GetPoint(n);
-			QC_Point={pnt=point,x=xOfs,y=yOfs};
-	end)
-	local pad = QC_Point.pnt or "BOTTOMLEFT";
-	CF:SetWidth(w);   
-	CF:SetHeight(h);
-	CF:SetPoint(pad,QC_Point.x,QC_Point.y );
-	CF:SetBackdrop(backdrop);
-	CF:SetBackdropColor(0.2,0.2,0.2,1);
-	CF:SetBackdropBorderColor(0.2,0.1,0.1,1);
+	if not QC_Settings.fixedFrame then
+		CF:SetMovable(true)
+		CF:SetClampedToScreen(true)
+		CF:SetScript("OnMouseDown", CF.StartMoving) 
+		CF:SetScript("OnMouseUp", function(self, event, ...)
+			self:StopMovingOrSizing()
+			local point, relativeTo, relativePoint, xOfs, yOfs = self:GetPoint(n)
+			QC_Point = {pnt = point, x = xOfs, y = yOfs}
+		end)
+	end
+	local pad = QC_Point.pnt or "BOTTOMLEFT"
+	CF:SetWidth(w)
+	CF:SetHeight(h)
+	CF:SetPoint(pad, QC_Point.x, QC_Point.y)
+	CF:SetBackdrop(backdrop)
+	CF:SetBackdropColor(0.2, 0.2, 0.2, 1)
+	CF:SetBackdropBorderColor(0.2, 0.1, 0.1, 1)
 	CF:Hide()
 	return CF;
 end
@@ -194,12 +196,13 @@ function frame:ADDON_LOADED(arg1)
 			QC_Settings.bt = 1
 		end
 		-- ~= false means true if nil
+		QC_Settings.fixedFrame = QC_Settings.fixedFrame == true
 		QC_Settings.enableRoll = QC_Settings.enableRoll ~= false
 		QC_Settings.enableReadyCheck = QC_Settings.enableReadyCheck ~= false
 		QC_Settings.enablePull = QC_Settings.enablePull ~= false
 		QC_Settings.enableBreak = QC_Settings.enableBreak ~= false
 		QC_Settings.enableReload = QC_Settings.enableReload ~= false
-		QuickChat.cfgFrame:onAddonLoaded()
+		QuickChat.mainConfigurationFrame:OnAddonLoaded()
 		if QC.F == nil then
 			update_frame_btn()
 		end
