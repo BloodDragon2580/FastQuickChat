@@ -25,7 +25,7 @@ end
 function Add_Frame(w,h)
 	local CF = CreateFrame("FRAME", "addcomentframe_frame", UIParent, BackdropTemplateMixin and "BackdropTemplate")
 	CF:EnableMouse(true)
-	if not QC_Settings.fixedFrame then
+	if not QC_Settings.lockFramePosition then
 		CF:SetMovable(true)
 		CF:SetClampedToScreen(true)
 		CF:SetScript("OnMouseDown", CF.StartMoving) 

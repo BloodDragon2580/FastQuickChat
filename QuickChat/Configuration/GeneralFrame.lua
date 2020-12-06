@@ -5,8 +5,8 @@ InterfaceOptions_AddCategory(frame)
 QuickChat.generalConfigurationFrame = frame
 
 function frame:OnAddonLoaded()
-    frame:CreateCheckButton("FixedFrame", "Fixed frame", QC_Settings.fixedFrame, function(checked)
-        QC_Settings.fixedFrame = checked
+    frame:CreateCheckButton("LockFramePosition", "Lock frame position", QC_Settings.lockFramePosition, function(checked)
+        QC_Settings.lockFramePosition = checked
     end)
 end
 
