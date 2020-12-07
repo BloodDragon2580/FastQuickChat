@@ -4,5 +4,6 @@
 	<Script file="ruRU.lua"/>
 	<Script file="frFR.lua"/>
 	<Script file="zhTW.lua"/>
+	<Script file="koKR.lua"/>
 	<Script file="core.lua"/>
 </Ui>

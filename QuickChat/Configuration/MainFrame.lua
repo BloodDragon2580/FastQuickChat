@@ -13,6 +13,10 @@ function frame:OnAddonLoaded()
     title:SetPoint("TOP", frame, "TOP", 0, -10) 
     title:SetText(l["TITLE"])
 
+    local info = frame:CreateFontString("QuickChat_BtnCfgFrame_Info", "OVERLAY", "GameFontHighlight")
+    info:SetPoint("TOP", frame, "TOP", 0, -40)
+    info:SetText(l["StartInfo"])
+
     local vertText = frame:CreateFontString("QuickChat_MainCfgFrame_Thx", "OVERLAY", "GameFontHighlight")
     vertText:SetPoint("BOTTOM", frame, "BOTTOM", 0, 10)
     vertText:SetText(l["THX"])
