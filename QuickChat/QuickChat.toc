@@ -11,4 +11,4 @@ Fix\lib.xml
 
 main.lua
 Fix.lua
-CfgFrame.lua
+Configuration\Configuration.xml
