@@ -1,6 +1,6 @@
-## Interface: 90200
+## Interface: 90205
 ## Title: |cffd6266cQuickChat|r
-## Version: 6.8
+## Version: 6.9
 ## Notes: QuickChat
 ## Author: BloodDragon2580
 ## Notes: Open Chat Faster (A big Thx at KalitaAlexey for the settings Page.)
