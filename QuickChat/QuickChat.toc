@@ -1,14 +1,14 @@
 ## Interface: 100002
 ## Title: |cffd6266cQuickChat|r
-## Version: 7.2
+## Version: 7.3
 ## Notes: QuickChat
 ## Author: BloodDragon2580
 ## Notes: Open Chat Faster (A big Thx at KalitaAlexey for the settings Page.)
 ## SavedVariablesPerCharacter: QC_Point, QC_Settings
 
 Locales\locales.xml
-Fix\lib.xml
+
+libs\TaintLess\TaintLess.xml
 
 main.lua
-Fix.lua
 Configuration\Configuration.xml
