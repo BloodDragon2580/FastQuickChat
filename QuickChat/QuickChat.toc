@@ -1,6 +1,6 @@
 ## Interface: 100200
 ## Title: |cffd6266cQuickChat|r
-## Version: 8.1
+## Version: 8.2
 ## Notes: QuickChat
 ## Author: BloodDragon2580
 ## Notes: Open Chat Faster (A big Thx at KalitaAlexey for the settings Page.)
