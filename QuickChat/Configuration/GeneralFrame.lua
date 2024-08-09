@@ -1,31 +1,62 @@
-local frame = CreateFrame("Frame", "QuickChat_GenCfgFrame", QuickChat.mainConfigurationFrame)
+-- Erstelle das Hauptkonfigurations-Frame
+local frame = CreateFrame("Frame", "QuickChat_GenCfgFrame", UIParent)
 frame.name = "General"
-frame.parent = QuickChat.mainConfigurationFrame.name
-InterfaceOptions_AddCategory(frame)
-QuickChat.generalConfigurationFrame = frame
+frame.parent = "QuickChat" -- Die Kategorie der Hauptkonfiguration als Parent verwenden
+frame:SetSize(400, 300)  -- Optional: Setze die Größe des Frames
 
+-- Die OnAddonLoaded-Funktion wird aufgerufen, wenn das Addon geladen wird
 function frame:OnAddonLoaded()
-
     local l = QuickChat_GetLocalization()
     
-    local title = frame:CreateFontString("QuickChat_MainCfgFrame_Title", "OVERLAY", "GameFontHighlightLarge")
-    title:SetPoint("TOP", frame, "TOP", 0, -10) 
+    -- Titel erstellen
+    local title = frame:CreateFontString("QuickChat_GenCfgFrame_Title", "OVERLAY", "GameFontHighlightLarge")
+    title:SetPoint("TOP", frame, "TOP", 0, -10)
     title:SetText(l["GENERALTITLE"])
 
-    local info = frame:CreateFontString("QuickChat_BtnCfgFrame_Info", "OVERLAY", "GameFontHighlight")
+    -- Informationstext erstellen
+    local info = frame:CreateFontString("QuickChat_GenCfgFrame_Info", "OVERLAY", "GameFontHighlight")
     info:SetPoint("TOP", frame, "TOP", 0, -40)
     info:SetText(l["GENERALINFO"])
-	
-    local info = frame:CreateFontString("QuickChat_BtnCfgFrame_Info1", "OVERLAY", "GameFontHighlightLarge")
-    info:SetPoint("BOTTOM", frame, "BOTTOM", 0, 10)
-    info:SetText(l["AfterReload"])
 
-    frame:CreateCheckButton("LockFramePosition", (l["LockFramePosition"]), QC_Settings.lockFramePosition, function(checked)
+    -- Zusätzlichen Informationstext erstellen
+    local info1 = frame:CreateFontString("QuickChat_GenCfgFrame_Info1", "OVERLAY", "GameFontHighlightLarge")
+    info1:SetPoint("BOTTOM", frame, "BOTTOM", 0, 10)
+    info1:SetText(l["AfterReload"])
+
+    -- CheckButton erstellen
+    self:CreateCheckButton("LockFramePosition", l["LockFramePosition"], QC_Settings.lockFramePosition, function(checked)
         QC_Settings.lockFramePosition = checked
-    end)	
+    end)
 end
 
-local previousButton = nil
+-- Methode zum Erstellen eines CheckButtons
 function frame:CreateCheckButton(name, text, checked, onCheckedChanged)
-    QuickChatConfiguration_CreateCheckButton(name, text, frame, previousButton, checked, onCheckedChanged)
+    local checkButton = CreateFrame("CheckButton", name, frame, "InterfaceOptionsCheckButtonTemplate")
+    checkButton:SetPoint("TOPLEFT", 16, -16)
+    checkButton.Text:SetText(text)
+    checkButton:SetChecked(checked)
+    checkButton:SetScript("OnClick", function(self)
+        onCheckedChanged(self:GetChecked())
+    end)
 end
+
+-- Funktion zum Hinzufügen des Panels zu den Interface-Optionen
+local function AddOptionsPanel()
+    -- Verwende die neuen Methoden zum Hinzufügen des Panels
+    local category = Settings.RegisterCanvasLayoutCategory(frame, "QuickChat")
+    Settings.RegisterAddOnCategory(category)
+end
+
+-- Registriere das Optionspanel
+AddOptionsPanel()
+
+QuickChat.generalConfigurationFrame = frame
+
+-- Registriere Events und initialisiere das Addon
+frame:SetScript("OnEvent", function(self, event, ...)
+    if event == "ADDON_LOADED" and (...) == "QuickChat" then
+        self:OnAddonLoaded()
+    end
+end)
+
+frame:RegisterEvent("ADDON_LOADED")

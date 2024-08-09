@@ -1,23 +1,35 @@
--- Creates a check button.
--- `name` is used to make a globally unique name for the check button.
--- `text` is the check button's text.
--- `parent` is the check button's.
--- `relativeFrame` (if not nil) is used to position the top of the check button to the bottom of the relative frame.
--- `checked` indicates if the check button is initially checked
--- `onCheckedChanged` is the callback that to be called if the check button's status is changed
--- Returns the check button
+-- Erzeugt einen Check-Button.
+-- `name` wird verwendet, um einen global eindeutigen Namen für den Check-Button zu erstellen.
+-- `text` ist der Text des Check-Buttons.
+-- `parent` ist das übergeordnete Frame des Check-Buttons.
+-- `relativeFrame` (falls nicht nil) wird verwendet, um den oberen Rand des Check-Buttons am unteren Rand des relativen Frames zu positionieren.
+-- `checked` gibt an, ob der Check-Button anfänglich aktiviert ist.
+-- `onCheckedChanged` ist die Callback-Funktion, die aufgerufen wird, wenn sich der Status des Check-Buttons ändert.
+-- Gibt den Check-Button zurück
 function QuickChatConfiguration_CreateCheckButton(name, text, parent, relativeFrame, checked, onCheckedChanged)
-    local b = CreateFrame("CheckButton", "QuickChat_CheckButton" .. name, parent, "ChatConfigCheckButtonTemplate")
+    -- Erstellen des CheckButtons mit einer einzigartigen ID
+    local checkButton = CreateFrame("CheckButton", "QuickChat_CheckButton_" .. name, parent, "ChatConfigCheckButtonTemplate")
+    
+    -- Positionierung des Buttons relativ zum gegebenen Frame oder zu einem festen Punkt
     if relativeFrame then
-        b:SetPoint("TOP", relativeFrame, "BOTTOM")
+        checkButton:SetPoint("TOP", relativeFrame, "BOTTOM", 0, -8) -- Fügt etwas Abstand zum relativen Frame hinzu
     else
-        b:SetPoint("TOP", -120, -100)
+        checkButton:SetPoint("TOPLEFT", parent, "TOPLEFT", 16, -16) -- Fallback-Position
     end
-    b:SetChecked(checked)
-    b:SetScript("OnClick", function()
-        onCheckedChanged(b:GetChecked())
+    
+    -- Setzt den anfänglichen Zustand des Buttons
+    checkButton:SetChecked(checked)
+    
+    -- Callback für den Statuswechsel des Buttons
+    checkButton:SetScript("OnClick", function()
+        onCheckedChanged(checkButton:GetChecked())
     end)
-    -- CheckButton has SetText, but it doesn't work
-    getglobal(b:GetName() .. "Text"):SetText(text)
-    return b
+    
+    -- Setzt den Text des Buttons
+    local textLabel = _G[checkButton:GetName() .. "Text"]
+    if textLabel then
+        textLabel:SetText(text)
+    end
+    
+    return checkButton
 end
