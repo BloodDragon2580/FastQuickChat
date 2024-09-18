@@ -1,11 +1,11 @@
 ## Interface: 110005
-## Title: |cffd6266cQuickChat|r
-## Version: 10.4
-## Notes: QuickChat
+## Title: |cffd6266cFastQuickChat|r
+## Version: 10.5
+## Notes: FastQuickChat
 ## Author: BloodDragon2580
 ## Notes: Open Chat Faster (A big Thx at KalitaAlexey for the settings Page.)
-## SavedVariablesPerCharacter: QC_Point, QC_Settings
-## IconTexture: Interface\AddOns\QuickChat\Media\Texture\logo
+## SavedVariablesPerCharacter: FQC_Point, FQC_Settings
+## IconTexture: Interface\AddOns\FastQuickChat\Media\Texture\logo
 
 embeds.xml
 

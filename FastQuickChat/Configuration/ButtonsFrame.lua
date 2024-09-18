@@ -41,8 +41,8 @@ end
 
 -- Callback-Funktion für das OnLoad-Ereignis des Panels
 local function OnAddonLoaded(panel)
-    if not QC_Settings then
-        QC_Settings = {
+    if not FQC_Settings then
+        FQC_Settings = {
             enableRoll = false,
             enableReadyCheck = false,
             enablePull = false,
@@ -51,7 +51,7 @@ local function OnAddonLoaded(panel)
         }
     end
     
-    local l = QuickChat_GetLocalization()
+    local l = FastQuickChat_GetLocalization()
 
     -- Erstelle UI-Elemente
     local title = panel:CreateFontString(nil, "OVERLAY", "GameFontHighlightLarge")
@@ -67,24 +67,24 @@ local function OnAddonLoaded(panel)
     info1:SetText(l["AfterReload"])
 
     -- Füge CheckButtons hinzu und füge Debugging-Ausgaben hinzu
-    CreateCheckButton(panel, "RollCheckButton", l["RO"], QC_Settings.enableRoll, function(checked)
-        QC_Settings.enableRoll = checked
+    CreateCheckButton(panel, "RollCheckButton", l["RO"], FQC_Settings.enableRoll, function(checked)
+        FQC_Settings.enableRoll = checked
         print("RollCheckButton state updated to: " .. tostring(checked))
     end)
-    CreateCheckButton(panel, "ReadyCheckButton", l["RC"], QC_Settings.enableReadyCheck, function(checked)
-        QC_Settings.enableReadyCheck = checked
+    CreateCheckButton(panel, "ReadyCheckButton", l["RC"], FQC_Settings.enableReadyCheck, function(checked)
+        FQC_Settings.enableReadyCheck = checked
         print("ReadyCheckButton state updated to: " .. tostring(checked))
     end)
-    CreateCheckButton(panel, "PullCheckButton", l["PULL"], QC_Settings.enablePull, function(checked)
-        QC_Settings.enablePull = checked
+    CreateCheckButton(panel, "PullCheckButton", l["PULL"], FQC_Settings.enablePull, function(checked)
+        FQC_Settings.enablePull = checked
         print("PullCheckButton state updated to: " .. tostring(checked))
     end)
-    CreateCheckButton(panel, "BreakCheckButton", l["BREAK"], QC_Settings.enableBreak, function(checked)
-        QC_Settings.enableBreak = checked
+    CreateCheckButton(panel, "BreakCheckButton", l["BREAK"], FQC_Settings.enableBreak, function(checked)
+        FQC_Settings.enableBreak = checked
         print("BreakCheckButton state updated to: " .. tostring(checked))
     end)
-    CreateCheckButton(panel, "ReloadCheckButton", l["RELOAD"], QC_Settings.enableReload, function(checked)
-        QC_Settings.enableReload = checked
+    CreateCheckButton(panel, "ReloadCheckButton", l["RELOAD"], FQC_Settings.enableReload, function(checked)
+        FQC_Settings.enableReload = checked
         print("ReloadCheckButton state updated to: " .. tostring(checked))
     end)
 end
@@ -96,11 +96,11 @@ local mainPanelInitialized = false
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("ADDON_LOADED")
 frame:SetScript("OnEvent", function(self, event, arg1)
-    if event == "ADDON_LOADED" and arg1 == "QuickChat" then
+    if event == "ADDON_LOADED" and arg1 == "FastQuickChat" then
         -- Initialisiere das Haupt-Optionspanel nur einmal nach dem Laden des Addons
         if not mainPanelInitialized then
             mainPanelInitialized = true
-            local mainPanel = CreateOptionsPanel("QuickChat_BtnCfgFrame", "QuickChat Buttons", "QuickChat", OnAddonLoaded)
+            local mainPanel = CreateOptionsPanel("FastQuickChat_BtnCfgFrame", "FastQuickChat Buttons", "FastQuickChat", OnAddonLoaded)
         end
     end
 end)

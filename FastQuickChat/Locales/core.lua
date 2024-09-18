@@ -1,4 +1,4 @@
-function QuickChat_GetLocalization()
+function FastQuickChat_GetLocalization()
     local l = QCL[GetLocale()];
     if type(l) ~= "table" then
         l = QCL["enUS"]

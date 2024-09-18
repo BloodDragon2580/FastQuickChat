@@ -6,9 +6,9 @@
 -- `checked` gibt an, ob der Check-Button anfänglich aktiviert ist.
 -- `onCheckedChanged` ist die Callback-Funktion, die aufgerufen wird, wenn sich der Status des Check-Buttons ändert.
 -- Gibt den Check-Button zurück
-function QuickChatConfiguration_CreateCheckButton(name, text, parent, relativeFrame, checked, onCheckedChanged)
+function FastQuickChatConfiguration_CreateCheckButton(name, text, parent, relativeFrame, checked, onCheckedChanged)
     -- Erstellen des CheckButtons mit einer einzigartigen ID
-    local checkButton = CreateFrame("CheckButton", "QuickChat_CheckButton_" .. name, parent, "ChatConfigCheckButtonTemplate")
+    local checkButton = CreateFrame("CheckButton", "FastQuickChat_CheckButton_" .. name, parent, "ChatConfigCheckButtonTemplate")
     
     -- Positionierung des Buttons relativ zum gegebenen Frame oder zu einem festen Punkt
     if relativeFrame then
