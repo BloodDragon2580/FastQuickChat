@@ -1,6 +1,6 @@
 ## Interface: 110005
 ## Title: |cffd6266cFastQuickChat|r
-## Version: 10.7
+## Version: 10.8
 ## Notes: FastQuickChat
 ## Author: BloodDragon2580
 ## Notes: Open Chat Faster (A big Thx at KalitaAlexey for the settings Page.)
