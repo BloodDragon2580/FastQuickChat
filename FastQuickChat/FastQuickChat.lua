@@ -10,7 +10,7 @@ if locale == "deDE" then
         instance="Instanz", roll="Würfeln", readycheck="Bereitschaft",
         pull="Pull", ["break"]="Pause", reload="Neuladen",
         showMinimap="Minimap-Button anzeigen", resetPos="Position zurücksetzen",
-        scale="Skalierung"
+        scale="Skalierung", transparentBackground="Transparenter Hintergrund"
     }
 elseif locale == "ruRU" then
     L = {
@@ -19,7 +19,7 @@ elseif locale == "ruRU" then
         instance="Подземелье", roll="Бросок", readycheck="Проверка готовности",
         pull="Пул", ["break"]="Перерыв", reload="Перезагрузить",
         showMinimap="Показывать кнопку у миникарты", resetPos="Сброс позиции",
-        scale="Масштаб"
+        scale="Масштаб", transparentBackground="Прозрачный фон"
     }
 elseif locale == "frFR" then
     L = {
@@ -28,7 +28,7 @@ elseif locale == "frFR" then
         instance="Instance", roll="Lancer", readycheck="Vérification de prêt",
         pull="Pull", ["break"]="Pause", reload="Recharger",
         showMinimap="Afficher le bouton de la minicarte", resetPos="Réinitialiser la position",
-        scale="Échelle"
+        scale="Échelle", transparentBackground="Arrière-plan transparent"
     }
 elseif locale == "esES" then
     L = {
@@ -37,7 +37,7 @@ elseif locale == "esES" then
         instance="Instancia", roll="Tirar", readycheck="Comprobación de preparación",
         pull="Pull", ["break"]="Pausa", reload="Recargar",
         showMinimap="Mostrar botón en el minimapa", resetPos="Restablecer posición",
-        scale="Escala"
+        scale="Escala", transparentBackground="Fondo transparente"
     }
 elseif locale == "itIT" then
     L = {
@@ -46,7 +46,7 @@ elseif locale == "itIT" then
         instance="Istanza", roll="Tira", readycheck="Controllo di Prontezza",
         pull="Pull", ["break"]="Pausa", reload="Ricarica",
         showMinimap="Mostra pulsante minimappa", resetPos="Ripristina posizione",
-        scale="Scala"
+        scale="Scala", transparentBackground="Sfondo trasparente"
     }
 elseif locale == "zhCN" then
     L = {
@@ -55,7 +55,7 @@ elseif locale == "zhCN" then
         instance="副本", roll="掷骰子", readycheck="准备确认",
         pull="拉怪", ["break"]="休息", reload="重载界面",
         showMinimap="显示小地图按钮", resetPos="重置位置",
-        scale="缩放"
+        scale="缩放", transparentBackground="透明背景"
     }
 elseif locale == "koKR" then
     L = {
@@ -64,7 +64,7 @@ elseif locale == "koKR" then
         instance="인스턴스", roll="주사위", readycheck="준비 확인",
         pull="풀링", ["break"]="휴식", reload="재로딩",
         showMinimap="미니맵 버튼 표시", resetPos="위치 초기화",
-        scale="크기 조정"
+        scale="크기 조정", transparentBackground="투명 배경"
     }
 else
     L = {
@@ -73,7 +73,7 @@ else
         instance="Instance", roll="Roll", readycheck="Ready Check",
         pull="Pull", ["break"]="Break", reload="Reload",
         showMinimap="Show Minimap Button", resetPos="Reset Position",
-        scale="Scale"
+        scale="Scale", transparentBackground="Transparent Background"
     }
 end
 
@@ -83,6 +83,7 @@ local defaults = {
     enableInstance=true, enableRoll=true, enableReadyCheck=true,
     enablePull=true, enableBreak=true, enableReload=true, showMinimap=true,
     frameX=nil, frameY=nil, frameScale=1,
+    transparentBackground=false,
     minimap = {}
 }
 
@@ -101,6 +102,22 @@ frame:SetBackdrop({
 })
 frame:SetBackdropColor(0.15,0.15,0.15,0.9)
 frame:SetBackdropBorderColor(0.4,0.4,0.4,1)
+
+-- Funktion für Hintergrund
+local function UpdateBackground()
+    if FastQuickChatDB.transparentBackground then
+        frame:SetBackdrop(nil)
+    else
+        frame:SetBackdrop({
+            bgFile="Interface\\DialogFrame\\UI-DialogBox-Background",
+            edgeFile="Interface\\Tooltips\\UI-Tooltip-Border",
+            edgeSize=16,
+            insets={left=3,right=3,top=3,bottom=3}
+        })
+        frame:SetBackdropColor(0.15,0.15,0.15,0.9)
+        frame:SetBackdropBorderColor(0.4,0.4,0.4,1)
+    end
+end
 
 -- Globale Tabelle
 FastQuickChat = FastQuickChat or {}
@@ -211,6 +228,8 @@ local function CreateCheckbox(label,key,yOffset)
             if FastQuickChat.ldbIcon then
                 if FastQuickChatDB.showMinimap then FastQuickChat.ldbIcon:Show("FastQuickChat") else FastQuickChat.ldbIcon:Hide("FastQuickChat") end
             end
+        elseif key=="transparentBackground" then
+            UpdateBackground()
         end
     end)
     return cb
@@ -234,6 +253,8 @@ if hasDBM then
 end
 
 CreateCheckbox(L.showMinimap,"showMinimap",yStart-(i*30))
+i=i+1
+CreateCheckbox(L.transparentBackground,"transparentBackground",yStart-(i*30))
 i=i+1
 
 -- Reset Position Button
@@ -330,6 +351,7 @@ frame:SetScript("OnEvent",function(self,event,arg1,...)
 
         UpdateButtons()
         UpdateButtonFonts(FastQuickChatDB.frameScale or 1)
+        UpdateBackground()
 
         -- Minimap via LDB
         local ldb = LibStub("LibDataBroker-1.1", true)
