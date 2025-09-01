@@ -1,73 +1,87 @@
 # English
-## FastQuickChat 🌟
+## 🎯 FastQuickChat
 
-A lightweight WoW addon that gives you one-click access to all your essential chat commands and DBM timers. Save time, stay organized, and never miss a roll or ready check again!
+💬 Quick Chat. Faster Raids. Less Typing!
 
-🚀 Features
+FastQuickChat is a lightweight World of Warcraft addon that gives you a customizable quick access bar for chat commands. Perfect for guild leaders, raid leaders, and casual players who want to save time for more action!
 
-🗨 Quick Chat Buttons: Say, Party, Raid, Guild, Instance
+✨ Features
 
-🎲 Roll Dice & Ready Check: One-click access
+✅ Quick buttons for:
 
-⏱ DBM Integration: Pull & Break timers
+💬 Say, 👥 Party, 🛡 Raid, 🏰 Guild, ⚔ Instance
+✅ 🎲 Roll and ✔ Ready Check with one click
+✅ 🔥 DBM Integration – Start Pull & Break timers instantly
+✅ 📦 Moveable & Scalable bar – drag it anywhere
+✅ 🗺 Minimap Icon toggle (LibDataBroker support)
+✅ ⚙ Full options panel for customization
+✅ 🌍 Multi-language support (EN, DE, RU, FR, ES, IT, CN, KR)
 
-🖱 Dynamic Button Bar: Moveable, scalable
+🔍 How to Move the Bar
 
-🧭 Minimap Icon: Toggle via LibDataBroker
+➡ Hold Shift and drag the bar to reposition
+➡ Click "Reset Position" in the settings panel to restore default
 
-🌐 Multilingual Support: English, German, Russian, French, Spanish, Italian, Chinese, Korean
+⚙ Installation
 
-⚙ Easy Configuration: Options panel in-game
+⬇ Download the addon
 
-🛠 Installation
+📂 Put it into Interface/AddOns
 
-Download the addon.
+🖥 Log in and type:
 
-Move it into your Interface/AddOns folder.
-
-Log in and type:
 /fqc
-to toggle the chat bar.
 
-Configure via the Options Panel or Minimap icon.
+
+➡ to toggle the chat bar
+4. ⚙ Configure via Options Panel or Minimap Icon
 
 💬 Commands
+/fqc
 
-/fqc — Toggle the FastQuickChat bar
+
+➡ Show or hide the FastQuickChat bar
 
 # Deutsch
-## FastQuickChat 🌟
+## 🎯 FastQuickChat
 
-Ein leichtgewichtiges WoW Addon, das dir mit einem Klick Zugriff auf alle wichtigen Chatbefehle und DBM-Timer gibt. Spare Zeit, behalte den Überblick und verpasse keinen Würfelwurf oder Ready Check mehr!
+💬 Schneller Chat. Weniger Tippen. Mehr Action!
 
-🚀 Funktionen
+FastQuickChat ist ein leichtes WoW-Addon mit einer anpassbaren Schnellzugriffsleiste für Chatbefehle. Ideal für Gildenleiter, Raidleiter und alle Spieler, die Zeit sparen möchten!
 
-🗨 Schnellzugriffs-Buttons: Sagen, Gruppe, Schlachtzug, Gilde, Instanz
+✨ Funktionen
 
-🎲 Würfeln & Bereitschaft prüfen: Mit nur einem Klick
+✅ Schnellzugriff für:
 
-⏱ DBM-Integration: Pull- & Pause-Timer
+💬 Sagen, 👥 Gruppe, 🛡 Schlachtzug, 🏰 Gilde, ⚔ Instanz
+✅ 🎲 Würfeln und ✔ Bereitschaftscheck per Klick
+✅ 🔥 DBM-Integration – Pull & Pause Timer sofort starten
+✅ 📦 Verschiebbare & skalierbare Leiste
+✅ 🗺 Minimap-Symbol (LibDataBroker-Unterstützung)
+✅ ⚙ Einstellungsmenü für volle Kontrolle
+✅ 🌍 Mehrsprachig (DE, EN, RU, FR, ES, IT, CN, KR)
 
-🖱 Dynamische Button-Leiste: Verschiebbar und skalierbar
+🔍 So verschiebst du die Leiste
 
-🧭 Minimap-Symbol: Steuerbar über LibDataBroker
+➡ Shift gedrückt halten und die Leiste ziehen
+➡ Im Einstellungsmenü auf „Position zurücksetzen“ klicken
 
-🌐 Mehrsprachig: Englisch, Deutsch, Russisch, Französisch, Spanisch, Italienisch, Chinesisch, Koreanisch
+⚙ Installation
 
-⚙ Einfache Konfiguration: Optionspanel im Spiel
+⬇ Addon herunterladen
 
-🛠 Installation
+📂 In den Ordner Interface/AddOns kopieren
 
-Addon herunterladen.
+🖥 Im Spiel eingeben:
 
-In den Ordner Interface/AddOns verschieben.
-
-Einloggen und eingeben:
 /fqc
-um die Leiste anzuzeigen oder zu verstecken.
 
-Einstellungen über das Optionspanel oder Minimap-Symbol vornehmen.
+
+➡ um die Leiste ein-/auszublenden
+4. ⚙ Einstellungen über Optionsmenü oder Minimap-Symbol
 
 💬 Befehle
+/fqc
 
-/fqc — FastQuickChat-Leiste ein-/ausblenden
+
+➡ Zeigt oder versteckt die FastQuickChat-Leiste

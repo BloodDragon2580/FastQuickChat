@@ -190,7 +190,7 @@ end
 -- Checkboxen erstellen
 local yStart=-16
 local i=0
-local keys={"enableSay","enableGuild","enableParty","enableRaid","enableInstance","enableRoll","enableReadyCheck"}
+local keys={"enableSay","enableGuild","enableParty","enableRaid","enableInstance","enableRoll","enableReadyCheck","enableReload"}
 for _,v in pairs(keys) do
     local label = L[string.lower(v:sub(7))]
     CreateCheckbox(label,v,yStart-(i*30))
