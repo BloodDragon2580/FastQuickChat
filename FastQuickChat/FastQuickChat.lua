@@ -10,7 +10,15 @@ if locale == "deDE" then
         instance="Instanz", roll="Würfeln", readycheck="Bereitschaft",
         pull="Pull", ["break"]="Pause", reload="Neuladen",
         showMinimap="Minimap-Button anzeigen", resetPos="Position zurücksetzen",
-        scale="Skalierung", transparentBackground="Transparenter Hintergrund"
+        scale="Skalierung", transparentBackground="Transparenter Hintergrund",
+        styleLabel="Button-Stil",
+        style_default="Standard",
+        style_dark="Dunkel (Schwarz/Weiß)",
+        style_blue="Blau/Gelb",
+        style_green="Grün",
+        style_red="Rot",
+        style_transparent="Transparent",
+        style_neon="Neon",
     }
 elseif locale == "ruRU" then
     L = {
@@ -19,7 +27,15 @@ elseif locale == "ruRU" then
         instance="Подземелье", roll="Бросок", readycheck="Проверка готовности",
         pull="Пул", ["break"]="Перерыв", reload="Перезагрузить",
         showMinimap="Показывать кнопку у миникарты", resetPos="Сброс позиции",
-        scale="Масштаб", transparentBackground="Прозрачный фон"
+        scale="Масштаб", transparentBackground="Прозрачный фон",
+        styleLabel="Стиль кнопки",
+        style_default="Стандарт",
+        style_dark="Тёмный (Чёрный/Белый)",
+        style_blue="Синий/Жёлтый",
+        style_green="Зелёный",
+        style_red="Красный",
+        style_transparent="Прозрачный",
+        style_neon="Неоновый",
     }
 elseif locale == "frFR" then
     L = {
@@ -28,7 +44,15 @@ elseif locale == "frFR" then
         instance="Instance", roll="Lancer", readycheck="Vérification de prêt",
         pull="Pull", ["break"]="Pause", reload="Recharger",
         showMinimap="Afficher le bouton de la minicarte", resetPos="Réinitialiser la position",
-        scale="Échelle", transparentBackground="Arrière-plan transparent"
+        scale="Échelle", transparentBackground="Arrière-plan transparent",
+        styleLabel="Style de bouton",
+        style_default="Standard",
+        style_dark="Sombre (Noir/Blanc)",
+        style_blue="Bleu/Jaune",
+        style_green="Vert",
+        style_red="Rouge",
+        style_transparent="Transparent",
+        style_neon="Néon",
     }
 elseif locale == "esES" then
     L = {
@@ -37,7 +61,15 @@ elseif locale == "esES" then
         instance="Instancia", roll="Tirar", readycheck="Comprobación de preparación",
         pull="Pull", ["break"]="Pausa", reload="Recargar",
         showMinimap="Mostrar botón en el minimapa", resetPos="Restablecer posición",
-        scale="Escala", transparentBackground="Fondo transparente"
+        scale="Escala", transparentBackground="Fondo transparente",
+        styleLabel="Estilo de botón",
+        style_default="Estándar",
+        style_dark="Oscuro (Negro/Blanco)",
+        style_blue="Azul/Amarillo",
+        style_green="Verde",
+        style_red="Rojo",
+        style_transparent="Transparente",
+        style_neon="Neón",
     }
 elseif locale == "itIT" then
     L = {
@@ -46,7 +78,15 @@ elseif locale == "itIT" then
         instance="Istanza", roll="Tira", readycheck="Controllo di Prontezza",
         pull="Pull", ["break"]="Pausa", reload="Ricarica",
         showMinimap="Mostra pulsante minimappa", resetPos="Ripristina posizione",
-        scale="Scala", transparentBackground="Sfondo trasparente"
+        scale="Scala", transparentBackground="Sfondo trasparente",
+        styleLabel="Stile pulsante",
+        style_default="Standard",
+        style_dark="Scuro (Nero/Bianco)",
+        style_blue="Blu/Giallo",
+        style_green="Verde",
+        style_red="Rosso",
+        style_transparent="Trasparente",
+        style_neon="Neon",
     }
 elseif locale == "zhCN" then
     L = {
@@ -55,7 +95,15 @@ elseif locale == "zhCN" then
         instance="副本", roll="掷骰子", readycheck="准备确认",
         pull="拉怪", ["break"]="休息", reload="重载界面",
         showMinimap="显示小地图按钮", resetPos="重置位置",
-        scale="缩放", transparentBackground="透明背景"
+        scale="缩放", transparentBackground="透明背景",
+        styleLabel="按钮样式",
+        style_default="标准",
+        style_dark="深色（黑/白）",
+        style_blue="蓝/黄",
+        style_green="绿色",
+        style_red="红色",
+        style_transparent="透明",
+        style_neon="霓虹",
     }
 elseif locale == "koKR" then
     L = {
@@ -64,7 +112,15 @@ elseif locale == "koKR" then
         instance="인스턴스", roll="주사위", readycheck="준비 확인",
         pull="풀링", ["break"]="휴식", reload="재로딩",
         showMinimap="미니맵 버튼 표시", resetPos="위치 초기화",
-        scale="크기 조정", transparentBackground="투명 배경"
+        scale="크기 조정", transparentBackground="투명 배경",
+        styleLabel="버튼 스타일",
+        style_default="표준",
+        style_dark="어두운 (검정/흰색)",
+        style_blue="파랑/노랑",
+        style_green="초록",
+        style_red="빨강",
+        style_transparent="투명",
+        style_neon="네온",
     }
 else
     L = {
@@ -73,7 +129,15 @@ else
         instance="Instance", roll="Roll", readycheck="Ready Check",
         pull="Pull", ["break"]="Break", reload="Reload",
         showMinimap="Show Minimap Button", resetPos="Reset Position",
-        scale="Scale", transparentBackground="Transparent Background"
+        scale="Scale", transparentBackground="Transparent Background",
+        styleLabel="Button Style",
+        style_default="Standard",
+        style_dark="Dark (Black/White)",
+        style_blue="Blue/Yellow",
+        style_green="Green",
+        style_red="Red",
+        style_transparent="Transparent",
+        style_neon="Neon",
     }
 end
 
@@ -84,6 +148,7 @@ local defaults = {
     enablePull=true, enableBreak=true, enableReload=true, showMinimap=true,
     frameX=nil, frameY=nil, frameScale=1,
     transparentBackground=false,
+	buttonStyle="default",
     minimap = {}
 }
 
@@ -130,26 +195,102 @@ local BUTTON_MARGIN=4
 local BUTTON_MIN_WIDTH=50
 local FRAME_PADDING=10
 
--- Button erstellen
-local function AddButton(text,command)
-    local btn = CreateFrame("Button",nil,QC.F,"UIPanelButtonTemplate")
-    btn:SetText(text)
-    btn:SetNormalFontObject("GameFontNormal")
-    local width = math.max(BUTTON_MIN_WIDTH, btn:GetTextWidth()+BUTTON_PADDING)
-    btn:SetSize(width,28)
+-- Button Style anwenden
+local function ApplyButtonStyle(btn)
+    local style = FastQuickChatDB.buttonStyle or "default"
+
+    -- Standard-Einstellungen für alle Buttons
+    btn:SetBackdrop({
+        bgFile = "Interface/ChatFrame/ChatFrameBackground",
+        edgeFile = "Interface/Tooltips/UI-Tooltip-Border",
+        edgeSize = 12,
+        insets = { left = 2, right = 2, top = 2, bottom = 2 }
+    })
+
+    if style == "default" then
+        -- kleiner schwarzer Rahmen, goldene Schrift
+        btn:SetBackdropColor(0, 0, 0, 0.8)
+        btn:SetBackdropBorderColor(0.2, 0.2, 0.2)
+        btn.text:SetTextColor(1, 0.82, 0)
+
+    elseif style == "dark" then
+        -- dunkler Button, weiße Schrift
+        btn:SetBackdropColor(0.05, 0.05, 0.05, 0.9)
+        btn:SetBackdropBorderColor(0.8, 0.8, 0.8)
+        btn.text:SetTextColor(1, 1, 1)
+
+    elseif style == "blue" then
+        -- Blau mit gelber Schrift
+        btn:SetBackdropColor(0, 0.2, 0.6, 0.9)
+        btn:SetBackdropBorderColor(1, 0.84, 0)
+        btn.text:SetTextColor(1, 0.9, 0.2)
+
+    elseif style == "green" then
+        -- Grün, leicht transparent
+        btn:SetBackdropColor(0, 0.5, 0, 0.8)
+        btn:SetBackdropBorderColor(0.8, 1, 0.8)
+        btn.text:SetTextColor(0.9, 1, 0.9)
+
+    elseif style == "red" then
+        -- Rot für wichtige Buttons
+        btn:SetBackdropColor(0.6, 0, 0, 0.9)
+        btn:SetBackdropBorderColor(1, 0.5, 0.5)
+        btn.text:SetTextColor(1, 0.8, 0.8)
+
+    elseif style == "transparent" then
+        -- Fast unsichtbar, nur Schrift sichtbar
+        btn:SetBackdropColor(0, 0, 0, 0)
+        btn:SetBackdropBorderColor(0, 0, 0, 0)
+        btn.text:SetTextColor(0.8, 0.8, 1)
+
+    elseif style == "neon" then
+        -- Neon-Look
+        btn:SetBackdropColor(0, 0, 0, 0.7)
+        btn:SetBackdropBorderColor(0, 1, 1) -- leuchtendes Cyan
+        btn.text:SetTextColor(0, 1, 1)
+    end
+end
+
+-- Button erstellen (Retail-kompatibel)
+local function AddButton(text, command)
+    local btn = CreateFrame("Button", nil, QC.F, "BackdropTemplate") -- wichtig: BackdropTemplate für SetBackdrop
+    btn:SetHeight(28)
+
+    -- FontString hinzufügen
+    btn.text = btn:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    btn.text:SetPoint("CENTER")
+    btn.text:SetText(text)
+
+    -- Dynamische Breite
+    local width = math.max(BUTTON_MIN_WIDTH, btn.text:GetStringWidth() + BUTTON_PADDING)
+    btn:SetWidth(width)
+
+    -- Hover-Effekt
+    btn:SetScript("OnEnter", function(self)
+        self:SetBackdropColor(0.3, 0.3, 0.3, 0.9)
+    end)
+    btn:SetScript("OnLeave", function(self)
+        ApplyButtonStyle(self)
+    end)
+
+    -- Klick-Event
     btn:SetScript("OnClick", function()
-        if command=="/pull 10" and SlashCmdList.DEADLYBOSSMODSPULL then
+        if command == "/pull 10" and SlashCmdList.DEADLYBOSSMODSPULL then
             SlashCmdList.DEADLYBOSSMODSPULL(10)
-        elseif command=="/break 10" and SlashCmdList.DEADLYBOSSMODSBREAK then
+        elseif command == "/break 10" and SlashCmdList.DEADLYBOSSMODSBREAK then
             SlashCmdList.DEADLYBOSSMODSBREAK(10)
-        elseif command=="/roll" then RandomRoll(1,100)
-        elseif command=="/readycheck" then DoReadyCheck()
-        elseif command=="/reload" then ReloadUI()
+        elseif command == "/roll" then RandomRoll(1, 100)
+        elseif command == "/readycheck" then DoReadyCheck()
+        elseif command == "/reload" then ReloadUI()
         else
-            local editBox=ChatEdit_ChooseBoxForSend()
-            ChatFrame_OpenChat(command,editBox.chatFrame)
+            local editBox = ChatEdit_ChooseBoxForSend()
+            ChatFrame_OpenChat(command, editBox.chatFrame)
         end
     end)
+
+    -- Style anwenden
+    ApplyButtonStyle(btn)
+
     return btn
 end
 
@@ -165,15 +306,25 @@ local function UpdateButtons()
     local inInstance, instanceType = IsInInstance()
     local scale = FastQuickChatDB.frameScale or 1
 
-    local function place(btn)
-        local width = btn.baseWidth * scale
-        local height = btn.baseHeight * scale
-        btn:SetSize(width, height)
-        btn:SetPoint("LEFT", QC.F, "LEFT", x, y)
-        x = x + width + BUTTON_MARGIN
-        table.insert(QC.buttons, btn)
-        btn:Show()
+local function place(btn)
+    -- Breite des Buttons dynamisch anhand Text berechnen
+    local btnText = btn.text:GetText()
+    local width = math.max(BUTTON_MIN_WIDTH, btn.text:GetStringWidth() + BUTTON_PADDING)
+    local height = 28
+
+    btn:SetSize(width * scale, height * scale)
+    btn:SetPoint("LEFT", QC.F, "LEFT", x, 0)
+
+    -- Abstand individuell anpassen
+    local margin = BUTTON_MARGIN
+    if btnText == L["break"] or btnText == L.reload then
+        margin = margin + 4 -- extra Abstand
     end
+
+    x = x + (width * scale) + margin
+    table.insert(QC.buttons, btn)
+    btn:Show()
+end
 
     local function add(text, command)
         local btn = AddButton(text, command)
@@ -198,12 +349,18 @@ local function UpdateButtons()
     QC.F:SetWidth(x + FRAME_PADDING)
 end
 
--- Schriftgröße der Buttons dynamisch anpassen
+-- UpdateButtonFonts anpassen
 local function UpdateButtonFonts(scale)
     local baseFontSize = 12
     for _, btn in pairs(QC.buttons) do
-        local font, _, flags = btn:GetFontString():GetFont()
-        btn:GetFontString():SetFont(font, baseFontSize * scale, flags)
+        if btn.text then
+            local font, _, flags = btn.text:GetFont()
+            btn.text:SetFont(font, baseFontSize * scale, flags)
+            
+            -- Breite dynamisch anpassen nach Text + Padding
+            local width = math.max(BUTTON_MIN_WIDTH, btn.text:GetStringWidth() + BUTTON_PADDING)
+            btn:SetWidth(width)
+        end
     end
 end
 
@@ -298,6 +455,94 @@ scaleSlider:SetScript("OnValueChanged", function(self, value)
     UpdateButtons()
     UpdateButtonFonts(value)
     self.Text:SetText(L.scale .. ": " .. string.format("%.2f", value))
+end)
+
+-- Label für Button Style
+local styleLabelText = panel:CreateFontString(nil, "ARTWORK", "GameFontNormal")
+styleLabelText:SetPoint("BOTTOMLEFT", scaleSlider, "TOPLEFT", 0, 0) -- leicht versetzt über Slider
+styleLabelText:SetText(L.styleLabel)
+
+-- Button Style Dropdown
+local styleDropdown = CreateFrame("Frame", "FQCStyleDropdown", panel, "UIDropDownMenuTemplate")
+styleDropdown:SetPoint("TOPLEFT", scaleSlider, "BOTTOMLEFT", -15, -60)
+
+UIDropDownMenu_SetWidth(styleDropdown, 160)
+UIDropDownMenu_SetText(styleDropdown, L.styleLabel)
+
+local function UpdateStyleDropdownText()
+    local style = FastQuickChatDB.buttonStyle or "default"
+    local label = L.style_default
+    if style == "dark" then label = L.style_dark end
+    if style == "blue" then label = L.style_blue end
+    if style == "green" then label = L.style_green end
+    if style == "red" then label = L.style_red end
+    if style == "transparent" then label = L.style_transparent end
+    if style == "neon" then label = L.style_neon end
+    UIDropDownMenu_SetText(styleDropdown, label)
+end
+
+UIDropDownMenu_Initialize(styleDropdown, function(self, level, menuList)
+    local info = UIDropDownMenu_CreateInfo()
+
+    info.text = L.style_default
+    info.func = function()
+        FastQuickChatDB.buttonStyle = "default"
+        UpdateButtons()
+        UpdateStyleDropdownText()
+    end
+    UIDropDownMenu_AddButton(info)
+
+    info.text = L.style_dark
+    info.func = function()
+        FastQuickChatDB.buttonStyle = "dark"
+        UpdateButtons()
+        UpdateStyleDropdownText()
+    end
+    UIDropDownMenu_AddButton(info)
+
+    info.text = L.style_blue
+    info.func = function()
+        FastQuickChatDB.buttonStyle = "blue"
+        UpdateButtons()
+        UpdateStyleDropdownText()
+    end
+    UIDropDownMenu_AddButton(info)
+
+    info.text = L.style_green
+    info.func = function()
+        FastQuickChatDB.buttonStyle = "green"
+        UpdateButtons()
+        UpdateStyleDropdownText()
+    end
+    UIDropDownMenu_AddButton(info)
+
+    info.text = L.style_red
+    info.func = function()
+        FastQuickChatDB.buttonStyle = "red"
+        UpdateButtons()
+        UpdateStyleDropdownText()
+    end
+    UIDropDownMenu_AddButton(info)
+
+    info.text = L.style_transparent
+    info.func = function()
+        FastQuickChatDB.buttonStyle = "transparent"
+        UpdateButtons()
+        UpdateStyleDropdownText()
+    end
+    UIDropDownMenu_AddButton(info)
+
+    info.text = L.style_neon
+    info.func = function()
+        FastQuickChatDB.buttonStyle = "neon"
+        UpdateButtons()
+        UpdateStyleDropdownText()
+    end
+    UIDropDownMenu_AddButton(info)
+end)
+
+styleDropdown:SetScript("OnShow", function()
+    UpdateStyleDropdownText()
 end)
 
 panel:Hide()
