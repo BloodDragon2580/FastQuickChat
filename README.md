@@ -3,71 +3,72 @@
 
 A lightweight WoW addon that gives you one-click access to all your essential chat commands and DBM timers. Save time, stay organized, and never miss a roll or ready check again!
 
-🚀 Features
+🚀 Features  
 
-🗨 Quick Chat Buttons: Say, Party, Raid, Guild, Instance
+🗨 Quick Chat Buttons: Say, Party, Raid, Guild, Instance  
 
-🎲 Roll Dice & Ready Check: One-click access
+🎲 Roll Dice & Ready Check: One-click access  
 
-⏱ DBM Integration: Pull & Break timers
+⏱ DBM Integration: Pull & Break timers  
 
-🖱 Dynamic Button Bar: Moveable, scalable
+🖱 Dynamic Button Bar: Moveable & scalable (**hold Shift + Left-Click to move**)  
 
-🧭 Minimap Icon: Toggle via LibDataBroker
+🧭 Minimap Icon: Toggle via LibDataBroker  
 
-🌈 Transparent Background: Optionally hide the frame background, leaving only the buttons visible
+🌈 Transparent Background: Optionally hide the frame background, leaving only the buttons visible  
 
-🌐 Multilingual Support: English, German, Russian, French, Spanish, Italian, Chinese, Korean
+🌐 Multilingual Support: English, German, Russian, French, Spanish, Italian, Chinese, Korean  
 
-⚙ Easy Configuration: Options panel in-game
+⚙ Easy Configuration: Options panel in-game  
 
-🛠 Installation
+🛠 Installation  
 
-Download the addon.
+Download the addon.  
 
-Move it into your Interface/AddOns folder.
+Move it into your Interface/AddOns folder.  
 
-Log in and type: /fqc to toggle the chat bar.
+Log in and type: /fqc to toggle the chat bar.  
 
-Configure via the Options Panel or Minimap icon.
+Configure via the Options Panel or Minimap icon.  
 
-💬 Commands
+💬 Commands  
 
-/fqc — Toggle the FastQuickChat bar
+/fqc — Toggle the FastQuickChat bar  
+
 
 # Deutsch
 ## FastQuickChat 🌟
 
-Ein leichtgewichtiges WoW Addon, das dir mit einem Klick Zugriff auf alle wichtigen Chatbefehle und DBM-Timer gibt. Spare Zeit, behalte den Überblick und verpasse keinen Würfelwurf oder Ready Check mehr!
+Ein leichtgewichtiges WoW Addon, das dir mit einem Klick Zugriff auf alle wichtigen Chatbefehle und DBM-Timer gibt. Spare Zeit, behalte den Überblick und verpasse keinen Würfelwurf oder Ready Check mehr!  
 
-🚀 Funktionen
+🚀 Funktionen  
 
-🗨 Schnellzugriffs-Buttons: Sagen, Gruppe, Schlachtzug, Gilde, Instanz
+🗨 Schnellzugriffs-Buttons: Sagen, Gruppe, Schlachtzug, Gilde, Instanz  
 
-🎲 Würfeln & Bereitschaft prüfen: Mit nur einem Klick
+🎲 Würfeln & Bereitschaft prüfen: Mit nur einem Klick  
 
-⏱ DBM-Integration: Pull- & Pause-Timer
+⏱ DBM-Integration: Pull- & Pause-Timer  
 
-🖱 Dynamische Button-Leiste: Verschiebbar und skalierbar
+🖱 Dynamische Button-Leiste: Verschiebbar & skalierbar (**mit Shift + Linksklick verschieben**)  
 
-🧭 Minimap-Symbol: Steuerbar über LibDataBroker
+🧭 Minimap-Symbol: Steuerbar über LibDataBroker  
 
-🌈 Transparenter Hintergrund: Rahmen ausblenden, nur die Buttons bleiben sichtbar
+🌈 Transparenter Hintergrund: Rahmen ausblenden, nur die Buttons bleiben sichtbar  
 
-🌐 Mehrsprachig: Englisch, Deutsch, Russisch, Französisch, Spanisch, Italienisch, Chinesisch, Koreanisch
+🌐 Mehrsprachig: Englisch, Deutsch, Russisch, Französisch, Spanisch, Italienisch, Chinesisch, Koreanisch  
 
-⚙ Einfache Konfiguration: Optionspanel im Spiel
+⚙ Einfache Konfiguration: Optionspanel im Spiel  
 
-🛠 Installation
+🛠 Installation  
 
-Addon herunterladen.
+Addon herunterladen.  
 
-In den Ordner Interface/AddOns verschieben.
+In den Ordner Interface/AddOns verschieben.  
 
-Einloggen und eingeben: /fqc um die Leiste anzuzeigen oder zu verstecken.
+Einloggen und eingeben: /fqc um die Leiste anzuzeigen oder zu verstecken.  
 
-Einstellungen über das Optionspanel oder Minimap-Symbol vornehmen.
+Einstellungen über das Optionspanel oder Minimap-Symbol vornehmen.  
 
-💬 Befehle
+💬 Befehle  
 
-/fqc — FastQuickChat-Leiste ein-/ausblenden
+/fqc — FastQuickChat-Leiste ein-/ausblenden  

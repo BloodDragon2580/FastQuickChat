@@ -1,10 +1,10 @@
 ## Interface: 110200
 ## Title: |cffd6266cFastQuickChat|r
-## Version: 15.7
+## Version: 15.8
 ## Notes: FastQuickChat. Open Chat Faster (A big Thx at KalitaAlexey for the settings Page.)
 ## Notes-ruRU: FastQuickChat. Открывайте чат быстрее (большое спасибо, KalitaAlexey, за страницу настроек).
 ## Author: BloodDragon2580
-## SavedVariables: FastQuickChatDB
+## SavedVariablesPerCharacter: FastQuickChatDB
 ## IconTexture: Interface\AddOns\FastQuickChat\Media\Texture\logo
 
 embeds.xml

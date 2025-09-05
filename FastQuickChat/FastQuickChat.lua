@@ -12,13 +12,10 @@ if locale == "deDE" then
         showMinimap="Minimap-Button anzeigen", resetPos="Position zurücksetzen",
         scale="Skalierung", transparentBackground="Transparenter Hintergrund",
         styleLabel="Button-Stil",
-        style_default="Standard",
-        style_dark="Dunkel (Schwarz/Weiß)",
-        style_blue="Blau/Gelb",
-        style_green="Grün",
-        style_red="Rot",
-        style_transparent="Transparent",
-        style_neon="Neon",
+        style_default="Standard", style_dark="Dunkel (Schwarz/Weiß)",
+        style_blue="Blau/Gelb", style_green="Grün", style_red="Rot",
+        style_transparent="Transparent", style_neon="Neon",
+        moveInfo="Shift + Linksklick auf die Leiste, um sie zu verschieben."
     }
 elseif locale == "ruRU" then
     L = {
@@ -28,14 +25,10 @@ elseif locale == "ruRU" then
         pull="Пул", ["break"]="Перерыв", reload="Перезагрузить",
         showMinimap="Показывать кнопку у миникарты", resetPos="Сброс позиции",
         scale="Масштаб", transparentBackground="Прозрачный фон",
-        styleLabel="Стиль кнопки",
-        style_default="Стандарт",
-        style_dark="Тёмный (Чёрный/Белый)",
-        style_blue="Синий/Жёлтый",
-        style_green="Зелёный",
-        style_red="Красный",
-        style_transparent="Прозрачный",
-        style_neon="Неоновый",
+        styleLabel="Стиль кнопки", style_default="Стандарт", style_dark="Тёмный (Чёрный/Белый)",
+        style_blue="Синий/Жёлтый", style_green="Зелёный", style_red="Красный",
+        style_transparent="Прозрачный", style_neon="Неоновый",
+        moveInfo="Shift + Левый клик, чтобы переместить панель."
     }
 elseif locale == "frFR" then
     L = {
@@ -45,14 +38,10 @@ elseif locale == "frFR" then
         pull="Pull", ["break"]="Pause", reload="Recharger",
         showMinimap="Afficher le bouton de la minicarte", resetPos="Réinitialiser la position",
         scale="Échelle", transparentBackground="Arrière-plan transparent",
-        styleLabel="Style de bouton",
-        style_default="Standard",
-        style_dark="Sombre (Noir/Blanc)",
-        style_blue="Bleu/Jaune",
-        style_green="Vert",
-        style_red="Rouge",
-        style_transparent="Transparent",
-        style_neon="Néon",
+        styleLabel="Style de bouton", style_default="Standard", style_dark="Sombre (Noir/Blanc)",
+        style_blue="Bleu/Jaune", style_green="Vert", style_red="Rouge",
+        style_transparent="Transparent", style_neon="Néon",
+        moveInfo="Shift + Clic gauche pour déplacer la barre."
     }
 elseif locale == "esES" then
     L = {
@@ -62,14 +51,10 @@ elseif locale == "esES" then
         pull="Pull", ["break"]="Pausa", reload="Recargar",
         showMinimap="Mostrar botón en el minimapa", resetPos="Restablecer posición",
         scale="Escala", transparentBackground="Fondo transparente",
-        styleLabel="Estilo de botón",
-        style_default="Estándar",
-        style_dark="Oscuro (Negro/Blanco)",
-        style_blue="Azul/Amarillo",
-        style_green="Verde",
-        style_red="Rojo",
-        style_transparent="Transparente",
-        style_neon="Neón",
+        styleLabel="Estilo de botón", style_default="Estándar", style_dark="Oscuro (Negro/Blanco)",
+        style_blue="Azul/Amarillo", style_green="Verde", style_red="Rojo",
+        style_transparent="Transparente", style_neon="Neón",
+        moveInfo="Shift + Clic izquierdo para mover la barra."
     }
 elseif locale == "itIT" then
     L = {
@@ -79,14 +64,10 @@ elseif locale == "itIT" then
         pull="Pull", ["break"]="Pausa", reload="Ricarica",
         showMinimap="Mostra pulsante minimappa", resetPos="Ripristina posizione",
         scale="Scala", transparentBackground="Sfondo trasparente",
-        styleLabel="Stile pulsante",
-        style_default="Standard",
-        style_dark="Scuro (Nero/Bianco)",
-        style_blue="Blu/Giallo",
-        style_green="Verde",
-        style_red="Rosso",
-        style_transparent="Trasparente",
-        style_neon="Neon",
+        styleLabel="Stile pulsante", style_default="Standard", style_dark="Scuro (Nero/Bianco)",
+        style_blue="Blu/Giallo", style_green="Verde", style_red="Rosso",
+        style_transparent="Trasparente", style_neon="Neon",
+        moveInfo="Shift + Click sinistro per spostare la barra."
     }
 elseif locale == "zhCN" then
     L = {
@@ -96,14 +77,10 @@ elseif locale == "zhCN" then
         pull="拉怪", ["break"]="休息", reload="重载界面",
         showMinimap="显示小地图按钮", resetPos="重置位置",
         scale="缩放", transparentBackground="透明背景",
-        styleLabel="按钮样式",
-        style_default="标准",
-        style_dark="深色（黑/白）",
-        style_blue="蓝/黄",
-        style_green="绿色",
-        style_red="红色",
-        style_transparent="透明",
-        style_neon="霓虹",
+        styleLabel="按钮样式", style_default="标准", style_dark="深色（黑/白）",
+        style_blue="蓝/黄", style_green="绿色", style_red="红色",
+        style_transparent="透明", style_neon="霓虹",
+        moveInfo="Shift + 左键点击移动条。"
     }
 elseif locale == "koKR" then
     L = {
@@ -113,14 +90,10 @@ elseif locale == "koKR" then
         pull="풀링", ["break"]="휴식", reload="재로딩",
         showMinimap="미니맵 버튼 표시", resetPos="위치 초기화",
         scale="크기 조정", transparentBackground="투명 배경",
-        styleLabel="버튼 스타일",
-        style_default="표준",
-        style_dark="어두운 (검정/흰색)",
-        style_blue="파랑/노랑",
-        style_green="초록",
-        style_red="빨강",
-        style_transparent="투명",
-        style_neon="네온",
+        styleLabel="버튼 스타일", style_default="표준", style_dark="어두운 (검정/흰색)",
+        style_blue="파랑/노랑", style_green="초록", style_red="빨강",
+        style_transparent="투명", style_neon="네온",
+        moveInfo="Shift + 왼쪽 클릭으로 바 이동."
     }
 else
     L = {
@@ -130,14 +103,10 @@ else
         pull="Pull", ["break"]="Break", reload="Reload",
         showMinimap="Show Minimap Button", resetPos="Reset Position",
         scale="Scale", transparentBackground="Transparent Background",
-        styleLabel="Button Style",
-        style_default="Standard",
-        style_dark="Dark (Black/White)",
-        style_blue="Blue/Yellow",
-        style_green="Green",
-        style_red="Red",
-        style_transparent="Transparent",
-        style_neon="Neon",
+        styleLabel="Button Style", style_default="Standard", style_dark="Dark (Black/White)",
+        style_blue="Blue/Yellow", style_green="Green", style_red="Red",
+        style_transparent="Transparent", style_neon="Neon",
+        moveInfo="Shift + LeftClick to move the bar."
     }
 end
 
@@ -371,6 +340,10 @@ local title=panel:CreateFontString(nil,"ARTWORK","GameFontNormalLarge")
 title:SetPoint("TOPLEFT",16,-16)
 title:SetText(L.desc)
 
+local moveInfo = panel:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
+moveInfo:SetPoint("TOPLEFT", title, "BOTTOMLEFT", 0, -4)
+moveInfo:SetText(L.moveInfo)
+
 -- Checkbox erstellen (muss vor Aufruf stehen!)
 local function CreateCheckbox(label,key,yOffset)
     local cb=CreateFrame("CheckButton",nil,panel,"InterfaceOptionsCheckButtonTemplate")
@@ -426,6 +399,8 @@ resetBtn:SetSize(width, 22)
 
 resetBtn:SetPoint("TOPLEFT", title, "BOTTOMLEFT", 0, yStart-(i*30))
 resetBtn:SetScript("OnClick", function()
+    FastQuickChatDB.framePoint = nil
+    FastQuickChatDB.frameRelativePoint = nil
     FastQuickChatDB.frameX = nil
     FastQuickChatDB.frameY = nil
     frame:ClearAllPoints()
@@ -560,12 +535,15 @@ frame:SetScript("OnMouseDown", function(self, button)
         self:StartMoving()
     end
 end)
+
 frame:SetScript("OnMouseUp", function(self, button)
     if button=="LeftButton" then
         self:StopMovingOrSizing()
-        local x,y=self:GetLeft(),self:GetTop()
-        FastQuickChatDB.frameX=x
-        FastQuickChatDB.frameY=y
+        local point, _, relativePoint, xOfs, yOfs = self:GetPoint()
+        FastQuickChatDB.framePoint = point
+        FastQuickChatDB.frameRelativePoint = relativePoint
+        FastQuickChatDB.frameX = xOfs
+        FastQuickChatDB.frameY = yOfs
     end
 end)
 
@@ -581,17 +559,29 @@ frame:RegisterEvent("PLAYER_LOGOUT")
 frame:RegisterEvent("GROUP_ROSTER_UPDATE")
 frame:RegisterEvent("PLAYER_ENTERING_WORLD")
 
-frame:SetScript("OnEvent",function(self,event,arg1,...)
-    if event=="ADDON_LOADED" and arg1==addonName then
+frame:SetScript("OnEvent", function(self, event, arg1, ...)
+    if event == "ADDON_LOADED" and arg1 == addonName then
+        -- DB initialisieren
         FastQuickChatDB = FastQuickChatDB or {}
-        for k,v in pairs(defaults) do
-            if FastQuickChatDB[k]==nil then FastQuickChatDB[k]=v end
+        for k, v in pairs(defaults) do
+            if FastQuickChatDB[k] == nil then FastQuickChatDB[k] = v end
         end
 
+        -- Scale anwenden
         frame:SetScale(FastQuickChatDB.frameScale or 1)
-        if FastQuickChatDB.frameX and FastQuickChatDB.frameY then
+
+        -- Position anwenden (mit Punkt)
+        if FastQuickChatDB.framePoint then
             frame:ClearAllPoints()
-            frame:SetPoint("TOPLEFT", UIParent, "BOTTOMLEFT", FastQuickChatDB.frameX, FastQuickChatDB.frameY)
+            frame:SetPoint(
+                FastQuickChatDB.framePoint,
+                UIParent,
+                FastQuickChatDB.frameRelativePoint,
+                FastQuickChatDB.frameX,
+                FastQuickChatDB.frameY
+            )
+        else
+            frame:SetPoint("CENTER")
         end
 
         UpdateButtons()
@@ -603,15 +593,17 @@ frame:SetScript("OnEvent",function(self,event,arg1,...)
         local ldbIcon = LibStub("LibDBIcon-1.0", true)
         if ldb and ldbIcon then
             local dataObj = ldb:NewDataObject("FastQuickChat", {
-                type="data source", text="FQC", icon=134217,
+                type = "data source",
+                text = "FQC",
+                icon = 134217,
                 OnClick = function(_, button)
-                    if button=="LeftButton" then
+                    if button == "LeftButton" then
                         if QC.F:IsShown() then QC.F:Hide() else QC.F:Show() end
                     end
                 end,
-                OnTooltipShow=function(tt)
+                OnTooltipShow = function(tt)
                     tt:AddLine("FastQuickChat")
-                    tt:AddLine("Click to toggle bar",0.2,1,0.2)
+                    tt:AddLine("Click to toggle bar", 0.2, 1, 0.2)
                 end
             })
             if dataObj then
@@ -621,10 +613,12 @@ frame:SetScript("OnEvent",function(self,event,arg1,...)
                 FastQuickChat.ldbIcon = ldbIcon
             end
         end
-    elseif event=="GROUP_ROSTER_UPDATE" or event=="PLAYER_ENTERING_WORLD" then
+
+    elseif event == "GROUP_ROSTER_UPDATE" or event == "PLAYER_ENTERING_WORLD" then
         UpdateButtons()
         UpdateButtonFonts(FastQuickChatDB.frameScale or 1)
-    elseif event=="PLAYER_LOGOUT" then
+
+    elseif event == "PLAYER_LOGOUT" then
         _G["FastQuickChatDB"] = FastQuickChatDB
     end
 end)
