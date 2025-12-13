@@ -1,4 +1,4 @@
-## Interface: 120000
+## Interface: 120001
 ## Title: |cffd6266cFastQuickChat|r
 ## Version: 16.9
 ## Notes: FastQuickChat. Open Chat Faster (A big Thx at KalitaAlexey for the settings Page.)
