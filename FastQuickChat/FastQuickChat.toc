@@ -1,6 +1,6 @@
-## Interface: 120001
+## Interface: 120005
 ## Title: |cffd6266cFastQuickChat|r
-## Version: 17.3
+## Version: 17.4
 ## Notes: FastQuickChat. Open Chat Faster (A big Thx at KalitaAlexey for the settings Page.)
 ## Notes-ruRU: FastQuickChat. Открывайте чат быстрее (большое спасибо, KalitaAlexey, за страницу настроек).
 ## Author: BloodDragon2580
